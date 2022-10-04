@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xsd:schema xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="ListaFacturas">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element name="Factura"></xsd:element>
+                     <xsd:complexType>
+                        <xsd:all>
+                            <xsd:element name="Emisor" type="xsd:string">
+                                <xsd:complexType>
+                                    <xsd:all>
+                                        <xsd:element name="Nombre" type="string"></xsd:element>
+                                        <xsd:element name="Volumenventas" type="xsd:integer" minOccurs="0"></xsd:element>    
+                                    </xsd:all>
+                                    <xsd:attribute name="CIF" type="xsd:integer" use="required"></xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="Pagador" type="xsd:string">
+                                <xsd:complexType>
+                                    <xsd:all>
+                                        <xsd:element name="Nombre" type="string"></xsd:element>
+                                        <xsd:element name="Volumenventas" type="xsd:integer" minOccurs="0"></xsd:element>    
+                                    </xsd:all>
+                                    <xsd:attribute name="CIF" type="xsd:integer" use="required"></xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="Importe" type="xsd:float"></xsd:element>
+                        </xsd:all>
+                        <xsd:attribute name="Fecha" type="xsd:date"></xsd:attribute>
+                    </xsd:complexType>
+            </xsd:all>
+        </xsd:complexType> 
+    </xsd:element>
+</xsd:schema>

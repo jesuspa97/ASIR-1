@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE listaventas [
+<!ELEMENT listaventas (ventas+)>
+<!ELEMENT ventas (importe,comprador,vendedor,fecha?,cod_factura)>
+<!ELEMENT importe (#PCDATA)>
+<!ELEMENT comprador (#PCDATA)>
+<!ELEMENT vendedor (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT cod_factura (#PCDATA)>
+]>
+
+<listaventas>
+    <ventas>
+        <importe>250.75</importe>
+        <comprador>Lauro</comprador>
+        <vendedor>LogiTech.Inc</vendedor>
+        <fecha>25/06/20</fecha>
+        <cod_factura>LGT250</cod_factura>
+    </ventas>
+
+    <ventas>
+        <importe>300</importe>
+        <comprador>Óscar</comprador>
+        <vendedor>Acer Industries</vendedor>
+        <cod_factura>ACR885</cod_factura>
+    </ventas>
+
+    <ventas>
+        <importe>1500</importe>
+        <comprador>Dolores</comprador>
+        <vendedor>Nvidia Entertaiment</vendedor>
+        <cod_factura>NVD108</cod_factura>
+    </ventas>
+
+    <ventas>
+        <importe>750</importe>
+        <comprador>Daniel</comprador>
+        <vendedor>Samsung</vendedor>
+        <fecha>3/03/19</fecha>
+        <cod_factura>SMG802</cod_factura>
+    </ventas>
+</listaventas>

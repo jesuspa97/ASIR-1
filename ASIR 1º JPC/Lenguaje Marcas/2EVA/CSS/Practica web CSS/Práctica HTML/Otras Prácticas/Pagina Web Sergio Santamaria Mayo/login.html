@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body background="./Img/padel4.png">
+        <font color=white size=5>
+            <form> 
+                <fieldset>
+                <legend> Datos personales</legend>
+                <p>Nombre: <input type="text" name="nombre" size="40"></p>
+                <p>Contraeña:<input type="password" name="contraseña"></p>
+                <p>Fecha de Nacimiento:<input type="number" name="fecha" min="1990" max="2021"></p>
+                <p>Privincia:
+                    <select name="menu">
+                          <option>Madrid</option>
+                          <option>Barcelona</option>
+                    </select>
+                </fielset>
+                    <fieldset>
+                    <legend>Preguntas</legend>
+			<p>Experiencia:<br>
+			<input type="radio" name="gustos">Novato<br>
+			<input type="radio" name="gustos">Principiante<br>
+			<input type="radio" name="gustos">Profesional
+            </fieldset>
+                    <fieldset>
+                        <legend> Sugerencias</legend>
+                        <p> Dime tu sugerencia:
+                           <p><textarea name="texto" rows="10" cols="100"></textarea></p>
+                        <p> 
+                        <input type="submit" value="Enviar Datos">
+                        <input type="reset" value="Borrar">
+                        </fieldset>
+        </font>
+    </body>
+</html>

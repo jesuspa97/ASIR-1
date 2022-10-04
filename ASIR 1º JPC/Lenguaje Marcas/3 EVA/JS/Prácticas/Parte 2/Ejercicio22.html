@@ -1,0 +1,45 @@
+<!-- De un candidato a un empleo, que realizó un test de capacitación, se obtuvo la
+siguiente información: nombre del candidato, cantidad total de preguntas que se le
+realizaron y cantidad de preguntas que contestó correctamente. Se pide confeccionar
+un programa que lea los datos del candidato e informe el nivel del mismo según el
+porcentaje de respuestas correctas que ha obtenido, y sabiendo que:
+Nivel superior:Porcentaje>=90%.
+Nivel medio: Porcentaje>=75% y <90%.
+Nivel bajo: Porcentaje>=50% y <75%.
+Fuera de nivel: Porcentaje<50%.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombre=prompt("Indícame tu nombre : ");
+        var preguntas=parseInt(prompt("Indícame el número de preguntas que se te han realizado : "));
+        var aciertos=parseInt(prompt("Indícame el número de preguntas que has respondido correctamente : "));
+        porcentaje=(aciertos/preguntas)*100;
+        if (porcentaje>=90)
+        {
+            document.write(nombre +" Tienes un nivel superior con un porcentaje de acierto del "+ porcentaje +"%." )
+        }
+        else if(75>=porcentaje<90)
+        {
+            document.write(nombre +" Tienes un nivel medio con un porcentaje de acierto del "+ porcentaje +"%." )
+        }
+        else if(50>=porcentaje<75)
+        {
+            document.write(nombre +" Tienes un nivel bajo con un porcentaje de acierto del "+ porcentaje +"%." )    
+        }
+        else
+        {
+            document.write(nombre +"Estás fuera del nivel con un porcentaje de acierto del "+ porcentaje +"%." )
+        }
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+CREATE DATABASE empresas;
+USE empresas;
+
+CREATE TABLE cliente (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  nombre varchar(100) NOT NULL,
+  apellido1 varchar(100) NOT NULL,
+  apellido2 varchar(100) DEFAULT NULL,
+  ciudad varchar(100) DEFAULT NULL,
+  categoría int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+INSERT INTO `cliente` VALUES (1,'Aarón','Rivero','Gómez','Almería',100),(2,'Adela','Salas','Díaz','Granada',200),(3,'Adolfo','Rubio','Flores','Sevilla',NULL),(4,'Adrián','Suárez',NULL,'Jaén',300),(5,'Marcos','Loyola','Méndez','Almería',200),(6,'María','Santana','Moreno','Cádiz',100),(7,'Pilar','Ruiz',NULL,'Sevilla',300),(8,'Pepe','Ruiz','Santana','Huelva',200),(9,'Guillermo','López','Gómez','Granada',225),(10,'Daniel','Santana','Loyola','Sevilla',125);
+
+CREATE TABLE comercial (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  nombre varchar(100) NOT NULL,
+  apellido1 varchar(100) NOT NULL,
+  apellido2 varchar(100) DEFAULT NULL,
+  comisión float DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+INSERT INTO `comercial` VALUES (1,'Daniel','Sáez','Vega',0.15),(2,'Juan','Gómez','López',0.13),(3,'Diego','Flores','Salas',0.11),(4,'Marta','Herrera','Gil',0.14),(5,'Antonio','Carretero','Ortega',0.12),(6,'Manuel','Domínguez','Hernández',0.13),(7,'Antonio','Vega','Hernández',0.11),(8,'Alfredo','Ruiz','Flores',0.05);
+
+CREATE TABLE pedido (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  total double NOT NULL,
+  fecha date DEFAULT NULL,
+  id_cliente int(10) unsigned NOT NULL,
+  id_comercial int(10) unsigned NOT NULL,
+  PRIMARY KEY (id),
+  KEY id_cliente (id_cliente),
+  KEY id_comercial (id_comercial),
+  CONSTRAINT pedido_ibfk_1 FOREIGN KEY (id_cliente) REFERENCES cliente (id),
+  CONSTRAINT pedido_ibfk_2 FOREIGN KEY (id_comercial) REFERENCES comercial (id)
+);
+INSERT INTO `pedido` VALUES (1,150.5,'2020-10-05',5,2),(2,270.65,'2018-09-10',1,5),(3,65.26,'2020-10-05',2,1),(4,110.5,'2018-08-17',8,3),(5,948.5,'2020-09-10',5,2),(6,2400.6,'2018-07-27',7,1),(7,5760,'2019-09-10',2,1),(8,1983.43,'2020-10-10',4,6),(9,2480.4,'2018-10-10',8,3),(10,250.45,'2015-06-27',8,2),(11,75.29,'2018-08-17',3,7),(12,3045.6,'2020-04-25',2,1),(13,545.75,'2019-01-25',6,1),(14,145.82,'2020-02-02',6,1),(15,370.85,'2019-03-11',1,5),(16,2389.23,'2019-03-11',1,5);
+-----------------------------
+CREATE DATABASE EMPRESAS;
+USE EMPRESAS;
+
+CREATE TABLE CLIENTE (
+  ID INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  NOMBRE VARCHAR(100) NOT NULL,
+  APELLIDO1 VARCHAR(100) NOT NULL,
+  APELLIDO2 VARCHAR(100) DEFAULT NULL,
+  CIUDAD VARCHAR(100) DEFAULT NULL,
+  CATEGORÍA INT(10) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (ID)
+);
+INSERT INTO `CLIENTE` VALUES (1,'AARÓN','RIVERO','GÓMEZ','ALMERÍA',100),(2,'ADELA','SALAS','DÍAZ','GRANADA',200),(3,'ADOLFO','RUBIO','FLORES','SEVILLA',NULL),(4,'ADRIÁN','SUÁREZ',NULL,'JAÉN',300),(5,'MARCOS','LOYOLA','MÉNDEZ','ALMERÍA',200),(6,'MARÍA','SANTANA','MORENO','CÁDIZ',100),(7,'PILAR','RUIZ',NULL,'SEVILLA',300),(8,'PEPE','RUIZ','SANTANA','HUELVA',200),(9,'GUILLERMO','LÓPEZ','GÓMEZ','GRANADA',225),(10,'DANIEL','SANTANA','LOYOLA','SEVILLA',125);
+
+CREATE TABLE COMERCIAL (
+  ID INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  NOMBRE VARCHAR(100) NOT NULL,
+  APELLIDO1 VARCHAR(100) NOT NULL,
+  APELLIDO2 VARCHAR(100) DEFAULT NULL,
+  COMISIÓN FLOAT DEFAULT NULL,
+  PRIMARY KEY (ID)
+);
+INSERT INTO `COMERCIAL` VALUES (1,'DANIEL','SÁEZ','VEGA',0.15),(2,'JUAN','GÓMEZ','LÓPEZ',0.13),(3,'DIEGO','FLORES','SALAS',0.11),(4,'MARTA','HERRERA','GIL',0.14),(5,'ANTONIO','CARRETERO','ORTEGA',0.12),(6,'MANUEL','DOMÍNGUEZ','HERNÁNDEZ',0.13),(7,'ANTONIO','VEGA','HERNÁNDEZ',0.11),(8,'ALFREDO','RUIZ','FLORES',0.05);
+
+CREATE TABLE PEDIDO (
+  ID INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  TOTAL DOUBLE NOT NULL,
+  FECHA DATE DEFAULT NULL,
+  ID_CLIENTE INT(10) UNSIGNED NOT NULL,
+  ID_COMERCIAL INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (ID),
+  KEY ID_CLIENTE (ID_CLIENTE),
+  KEY ID_COMERCIAL (ID_COMERCIAL),
+  CONSTRAINT PEDIDO_IBFK_1 FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE (ID),
+  CONSTRAINT PEDIDO_IBFK_2 FOREIGN KEY (ID_COMERCIAL) REFERENCES COMERCIAL (ID)
+);
+INSERT INTO `PEDIDO` VALUES (1,150.5,'2020-10-05',5,2),(2,270.65,'2018-09-10',1,5),(3,65.26,'2020-10-05',2,1),(4,110.5,'2018-08-17',8,3),(5,948.5,'2020-09-10',5,2),(6,2400.6,'2018-07-27',7,1),(7,5760,'2019-09-10',2,1),(8,1983.43,'2020-10-10',4,6),(9,2480.4,'2018-10-10',8,3),(10,250.45,'2015-06-27',8,2),(11,75.29,'2018-08-17',3,7),(12,3045.6,'2020-04-25',2,1),(13,545.75,'2019-01-25',6,1),(14,145.82,'2020-02-02',6,1),(15,370.85,'2019-03-11',1,5),(16,2389.23,'2019-03-11',1,5);

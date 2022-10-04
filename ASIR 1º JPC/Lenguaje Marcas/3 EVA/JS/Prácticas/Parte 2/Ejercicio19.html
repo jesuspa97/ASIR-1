@@ -1,0 +1,36 @@
+<!-- Confeccionar un programa que pida por teclado tres notas de un alumno, calcule el
+promedio e imprima alguno de estos mensajes:
+a. Si el promedio es >=7 mostrar "Promocionado".
+b. Si el promedio es >=4 y <7 mostrar "Regular".
+c. Si el promedio es <4 mostrar "suspenso". -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var notauno = parseFloat(prompt("Indícame tu primera nota: "))
+        var notados = parseFloat(prompt("Indícame tu segunda nota: "))
+        var notatres = parseFloat(prompt("Indícame tu tercera nota: "))
+        var media = ((notauno+notados+notatres)/3)
+        if (media>=7)
+        {
+        document.write("Promocionado")
+        }
+        else if (4>=media<7 ) 
+        {
+            document.write("Regular")
+        }
+        else
+        {
+            document.write("Suspenso")
+        }  
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejer 28</title>
+</head>
+<body>
+    <script>  
+        var vector = new Array(5);
+        vector[0] = 4;
+        vector[1] = 9;
+        vector[2] = 6;
+        vector[3] = 65;
+        vector[4] = 30;
+        /*Si ponemos  for (var i=0; i<=vector.length; i++) nos saldría la lista y un último valor undefinied ya que hay 5 vectores pero empieza a contar desde el 0.s*/
+        for (var i=0; i<vector.length; i++) {
+            document.write(vector[i] + "<br>");
+        }
+
+        document.write("La longitud del array es: " + vector.length);
+    </script>
+    
+</body>
+</html>

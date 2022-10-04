@@ -1,0 +1,77 @@
+div.menu{
+    width: 100%;
+    height: 10vh;
+    display: block;
+    position: relative;
+    top: 0;
+    margin: 0px;
+    background-image: url("https://thumbs.dreamstime.com/b/fondo-o-textura-de-pizarra-negra-gris-oscuro-losas-granito-negro-panorama-219968927.jpg");
+    position: sticky;
+    z-index: 1;
+}
+
+ul.listamenu{width: 100%;
+    text-align: center;
+    font-size: 50px; 
+    padding:0px;
+    margin:0px;
+    height: 11vh;
+    font-family:"gorock" ;
+}
+
+a{text-decoration: none;color: white;}
+
+li{ display:block; width: 10%;float: left;
+    margin-left: 5%;margin-right: 4%;
+    margin-top: 0.8%;padding-bottom: 10px;
+}
+
+    li.iuno{color: rgb(255, 255, 255);border-bottom:rgb(182, 84, 27) 20px solid; border-radius: 10px;}
+    li.idos{color: red;border-bottom:red 10px solid;}
+    li.itres{color: yellow;border-bottom:yellow 5px solid;width: 15%;}
+    li.icuatro{color: blue;border-bottom:rgb(177, 80, 80) 10px solid;}
+    li.icinco{color: green;border-bottom:rgb(182, 84, 27) 20px solid; border-radius: 10px;}
+    
+    li.iuno a {color: rgb(182, 84, 27);}
+    li.idos a {color: red;}         /*li.idos a {color: lightgrey;}*/
+    li.itres a {color: yellow}
+    li.icuatro a {color: rgb(177, 80, 80);}
+    li.icinco a {color: rgb(182, 84, 27);}
+
+
+
+
+@font-face {
+    font-family:"Autography" ;
+    src: url(./fuentes/Autography.otf);
+}
+
+@font-face {
+    font-family:"startup" ;
+    src: url(./fuentes/StartupLifeDemoRegular.ttf);
+}
+
+@font-face {
+    font-family: quentin;
+    src: url(./fuentes/Quentin.otf);
+}
+
+@font-face {
+    font-family: "milky";
+    src: url(./fuentes/Milky\ Matcha.otf);
+}
+
+@font-face {
+    font-family: "gorock";
+    src: url(./fuentes/Gorock\ Brush.ttf);
+}
+
+@font-face {
+    font-family: "tiza";
+    src: url(./fuentes/tiza.ttf);
+}
+
+@font-face {
+    font-family: "blackboard";
+    src: url(./fuentes/Blackboard.ttf);
+}

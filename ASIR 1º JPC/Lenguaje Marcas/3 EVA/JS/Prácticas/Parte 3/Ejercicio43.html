@@ -1,0 +1,26 @@
+<!-- Se ingresan un conjunto de 5 alturas de personas por teclado. Mostrar la altura
+promedio de las personas. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         var promedio;
+         var altura;
+         var suma=parseFloat(0);
+         for (i=1;i<=5;i++)
+         {
+            altura=parseFloat(prompt("Índicame una altura : "))
+            suma=suma+altura;
+         }
+         promedio=suma/5;
+         document.write('El promedio de las alturas es igual a '+promedio)
+     </script>
+     
+ </body>
+ </html>

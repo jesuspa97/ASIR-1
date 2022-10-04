@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <script>
+        function Comprobar(){
+            var  nombre = document.getElementById("nombre").value;
+            var  apellidos = document.getElementById("apellidos").value;
+            var  email = document.getElementById("email").value;
+            var  poblacion = document.getElementById("poblacion").value;
+            var  provincia = document.getElementById("provincia").value;
+            /*alert(nombre)
+            alert(apellidos)
+            alert(email)
+            alert(poblacion)
+            alert(provincia)*/
+            /*var edad;
+            for (i=0;i<4;i++){
+                if (document.formedad.edad[i].checked){
+                    edad=document.formedad.edad[i].value;
+                }
+            }*/
+            /*alert(edad)*/
+            var opinion = document.getElementById("opinion").value;
+            var sugerencia = document.getElementById("sugerencia").value;
+            /*alert(edad)
+            alert(como)
+            alert(opinion)
+            alert(sugerencia)
+            alert(hora)*/
+
+            if (nombre.length<=0){
+                alert("Campo obligatorio NOMBRE vacío,rellénelo.")
+                document.getElementById("nombre").focus()
+            }
+            else if(nombre.length<2){
+                    alert("El campo NOMBRE no es correcto.")
+                    document.getElementById("nombre").focus()
+                }
+            
+            if (apellidos.length<=0){
+                alert("Campo obligatorio APELLIDOS vacío,rellénelo.")
+                document.getElementById("apellidos").focus()
+            }
+            else if (apellidos.length<6){
+                alert("El campo APELLDIOS no es correcto.")
+                document.getElementById("apellidos").focus()
+            }
+            if (email.length<=0){
+                alert("Campo obligatorio CORREO ELECTRÓNICO vacío,rellénelo.")
+                document.getElementById("email").focus() 
+            }
+            else if (email.indexOf("@")==-1 || email.indexOf(".")==-1){
+                    alert("El  campo CORREO ELECTRÓNICO no es correcto.")
+                    document.getElementById("email").focus()
+                }
+            if (poblacion.length<=0){
+                alert("Campo obligatorio POBLACIÓN vacío,rellénelo.")
+                document.getElementById("poblacion").focus()
+            }
+            else if(poblacion.length<4){
+                    alert("El campo POBLACIÓN no es correcto.")
+                    document.getElementById("poblacion").focus()
+                }
+            if (provincia.length<=0){
+                alert("Campo obligatorio PROVINCIA vacío,rellénelo.")
+                document.getElementById("provincia").focus()
+            }
+            else if(provincia.length<4){
+                    alert("El campo PROVINCIA no es correcto.")
+                    document.getElementById("provincia").focus()
+                }
+            /*var edad; SACAR VALOR RADIOS
+            for (i=0;i<4;i++){
+                if (document.formedad.edad[i].checked){
+                    edad=document.formedad.edad[i].value;
+                }
+            }*/
+            /*alert(edad)*/
+            if (!document.formedad.edad[0].checked && !document.formedad.edad[1].checked && !document.formedad.edad[2].checked && !document.formedad.edad[3].checked){
+            alert("Campo obligatorio EDAD vacío,rellénelo.")
+            }
+            if (!document.formcomo.como[0].checked && !document.formcomo.como[1].checked && !document.formcomo.como[2].checked && !document.formcomo.como[3].checked){
+            alert("Campo obligatorio COMO NOS CONOCISTE vacío,rellénelo.")
+            }
+            if (opinion.length<=0){
+                alert("Campo obligatorio OPINION vacío,rellénelo.")
+                document.getElementById("opinion").focus()
+            }
+            if (sugerencia.length<=0){
+                alert("Campo obligatorio SUGERENCIA vacíº,rellénelo.")
+                document.getElementById("sugerencia").focus()
+            }         
+        }   
+    </script>
+
+    <table name="tabla" id="tabla">
+        <tr>
+            <form name="form">
+            <td rowspan="5"></td>
+            <td colspan="2">
+                Nombre: <input type="text" name="nombre" id="nombre"><br>
+                Apellidos: <input type="text" name="apellidos" id="apellidos"><br>
+                Correo electrónico: <input type="email" name="email" id="email" placeholder="@"><br>
+                Población: <input type="text" name="poblacion" id="poblacion"><br>
+                Provincia: <input type="text" name="provincia" id="provincia"><br>
+            </form>
+            </td>
+            <td rowspan="5"></td>
+        </tr>
+        <tr>
+            <td>
+                <form name="formedad">
+                Edad: <br>
+                <input type="radio" name="edad" id="edad1" value="0-20">0-20<br>
+                <input type="radio" name="edad" id="edad2" value="20-40">20-40<br>
+                <input type="radio" name="edad" id="edad3" value="40-60">40-60<br>
+                <input type="radio" name="edad" id="edad4" value="60-100">60-100<br>
+            </form>    
+            </td>
+            <td>
+                <form name="formcomo">
+                ¿Cómo nos conociste?<br>
+                <input type="checkbox" name="como" id="como1">A través de un amigo.<br>
+                <input type="checkbox" name="como" id="como2">A través de un buscador.<br>
+                <input type="checkbox" name="como" id="como3">Navegando por la red.<br>
+                <input type="checkbox" name="como" id="como4">Otros<br>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Opinión sobre nuestra página web<br>
+                <textarea name="opinion" id="opinion" cols="30" rows="4" placeholder="Escriba aquí su opnión..."></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Tiene alguna sugerencia...<br>
+                <textarea name="sugerencia" id="sugerencia" cols="30" rows="4" placeholder="Escriba aquí sus sugerencias..."></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                ¿Cuánto navegas por internet? (Señala la opción que más se acerque)<br>
+                <select id="horas">
+                    <option name="hora" id="hora1" value="2">2 horas al día</option>
+                    <option name="hora" id="hora2" value="4">4 horas al día</option>    
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>
+                <button name="Enviar" id="Enviar" onclick="Comprobar()">Enviar Formulario</button>
+                <button type="reset" name="Borrar" id="Borrar">Borrar Formulario</button>
+                <input type="reset" name="Borrar2" id="Borrar2">
+            </td>
+        </tr>    
+    </table>   
+</body>
+</html>

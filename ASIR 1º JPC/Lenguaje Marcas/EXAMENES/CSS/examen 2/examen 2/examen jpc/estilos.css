@@ -1,0 +1,77 @@
+@font-face{
+    font-family: "righteous";
+    src: url(./righteous.woff2);
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #dcba8c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+h2{
+    font-family: "righteous";
+    font-size: 2.5em;
+    padding: 0;
+    margin-bottom: 0.4em;}
+
+div.total{
+    margin-left: 25%;
+    margin-right: 25%;
+    border-left: #bc8a44 20px solid;
+    padding: 1em;}
+
+    h1{
+    font-size: 3.1em;
+    text-align: center;
+    position: relative;
+    top: -40px;}
+
+    img.img-left{
+        width: 11%;
+        float: left;}
+    
+    img.img-right {
+        width: 11%;
+        float: right;}
+
+p.p-uno{
+        border: #bc8a44 7px dotted;
+        border-radius: 20px;
+        padding: 1em;
+        margin-top: -20px;}
+
+div.texto{
+        border-left: #bc8a44 7px solid;
+        border-right: #bc8a44 7px solid;
+        padding-inline: 1em;
+        margin-top: 1em;
+        margin-bottom: 1em;}
+
+
+    img.robert{
+        border: #bc8a44 3px solid;
+        float: right;
+        width: 13%;
+        margin-left: 5px;}
+
+
+    img.wharton{
+        width: 13%;
+        float: left;
+        padding: 3px;
+        border: #bc8a44 3px solid;
+        margin-right: 5px;}
+        
+    img.lovecraft{
+        width: 13%;
+        float: right;
+        padding: 3px;
+        border: #bc8a44 3px solid;
+        margin-left: 5px;}
+
+ul{padding: 0;}
+        

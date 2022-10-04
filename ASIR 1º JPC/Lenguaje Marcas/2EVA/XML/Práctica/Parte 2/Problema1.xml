@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Listaventas[
+  <!ELEMENT Listaventas (Venta*)>
+  <!ELEMENT Venta (Importe, Comprador, Vendedor, Fecha?, Códigofactura)>
+  <!ELEMENT Importe (#PCDATA)>
+  <!ELEMENT Comprador (#PCDATA)>
+  <!ELEMENT Vendedor (#PCDATA)>
+  <!ELEMENT Fecha (#PCDATA)>
+  <!ELEMENT Códigofactura (#PCDATA)>
+]>
+
+<Listaventas>
+  <Venta>
+        <Importe>35.000.000€</Importe>
+        <Comprador>Real Madrid</Comprador>
+        <Vendedor>Flamengo</Vendedor>
+        <Fecha></Fecha>
+        <Códigofactura>RMA20</Códigofactura>
+  </Venta>
+  <Venta>
+        <Importe>0.00€</Importe>
+        <Comprador>Real Madrid</Comprador>
+        <Vendedor>PSG</Vendedor>
+        <Fecha>1-1-2022</Fecha>
+        <Códigofactura>RMA7</Códigofactura>
+  </Venta>
+  <Venta>
+        <Importe>70.000.000€</Importe>
+        <Comprador>Real Madrid</Comprador>
+        <Vendedor>Borussia Dortmund</Vendedor>
+        <Fecha>1-7-2022</Fecha>
+        <Códigofactura>RMA99</Códigofactura>
+  </Venta>
+    <Venta>
+        <Importe>30.000.000€</Importe>
+        <Comprador>FC Barcelona</Comprador>
+        <Vendedor>Sevilla</Vendedor>
+        <Fecha>30-8-2021</Fecha>
+        <Códigofactura>FCB14</Códigofactura>
+  </Venta>
+</Listaventas>

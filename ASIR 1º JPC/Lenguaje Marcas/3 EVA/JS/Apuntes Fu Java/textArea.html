@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formularios 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form {
+            color: rebeccapurple;
+        }
+        input {
+            border: 0px;
+            /*box-shadow: 1px 1px 5px black;*/
+            margin: 10px;
+        }
+        textarea {
+            border: none;
+            margin: 1em;
+            box-shadow: 1px 1px 10px black;
+
+        }
+        h1 {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+                function longitudCurriculum() {
+            if (document.form1.curriculum.value.length<20) {
+                alert("curriculum demasiado corto");
+                document.getElementById("curriculum").focus();
+            }
+            else {
+                alert("curriculum enviado correctamente");
+                document.form1.curriculum.value = "";
+            }
+        }
+
+    </script>
+<h1>Estudios</h1>
+<form name="form1">
+    <textarea name="curriculum" id="curriculum" rows="10" cols="50"></textarea>
+    <br>
+    <input type="button" value="Mostrar" onclick=longitudCurriculum()>
+
+</form>
+</body>
+</html>

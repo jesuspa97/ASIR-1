@@ -1,0 +1,34 @@
+<!-- Realizar una función que recibe dos números y me tiene que mostrar el primer número elevado al segundo.Es obligatorio usar bucles.
+Llamada: (2,4)(2 a la 4)
+Resultado: 16. -->
+<!Doctype html>
+<html>
+<head>
+
+	<title></title>
+	
+		
+</head>
+
+<body>
+	<script>
+        function potencia(base,grado) 
+        {    
+            for (i=1;i<grado;i++) 
+            {
+                valor=parseInt(valor*base);
+            }
+            return valor;
+        }
+    
+        var base=parseInt(prompt("Indícame el número que quieres como base para potenciar : "));
+        var grado=parseInt(prompt("Indícame el grado de la potencia : "));
+        var valor=parseInt(base);
+        document.write("El resultado es : " + potencia(base,grado));
+    </script>
+
+	
+</body>
+
+</html>
+

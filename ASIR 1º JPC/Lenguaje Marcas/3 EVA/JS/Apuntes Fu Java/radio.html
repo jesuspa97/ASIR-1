@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formularios 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form {
+            color: rebeccapurple;
+        }
+        input {
+            border: 0px;
+            /*box-shadow: 1px 1px 5px black;*/
+            margin: 10px;
+        }
+        h1 {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+                function mostrarSeleccionado() {
+            if (document.form1.estudios[0].checked) {
+                alert("Sus estudios son:  " + document.form1.estudios[0].value);
+            }
+            if (document.form1.estudios[1].checked) {
+                alert("Sus estudios son:  " + document.form1.estudios[1].value);
+            }
+            if (document.form1.estudios[2].checked) {
+                alert("Sus estudios son:  " + document.form1.estudios[2].value);
+            }
+            if (document.form1.estudios[3].checked) {
+                alert("Sus estudios son:  " + document.form1.estudios[3].value);
+            }
+            
+        }
+
+    </script>
+<h1>Estudios</h1>
+<form name="form1">
+    <input type="radio" name="estudios" value="Sin estudios"> Sin estudios <br>
+    <input type="radio" name="estudios" value="Estudios primarios"> Estudios primarios <br>
+    <input type="radio" name="estudios" value="Estudios secundarios"> Estudios secundarios <br>
+    <input type="radio" name="estudios" value="Estudios universitarios"> Estudios universitarios
+    <br>
+    <input type="button" value="Mostrar" onclick=mostrarSeleccionado()>
+
+</form>
+</body>
+</html>

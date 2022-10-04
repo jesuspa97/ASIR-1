@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cine [
+    <!ELEMENT cine (pelicula)>
+    <!ELEMENT pelicula (título, director, estreno, reparto)>
+    <!ELEMENT título (#PCDATA)>
+    <!ELEMENT director (#PCDATA)>
+    <!ELEMENT estreno (#PCDATA)>
+    <!ELEMENT reparto (#PCDATA)>
+]>
+
+    <cine>
+        <pelicula categoría="ACCIÓN">
+                <título idioma="Coreano">TITULASOPAPÁ</título> 
+                <director>Vinicius JR.</director>
+                <estreno>28/07/1996</estreno>
+                <reparto>Stallone</reparto>
+        </pelicula>    
+    </cine>

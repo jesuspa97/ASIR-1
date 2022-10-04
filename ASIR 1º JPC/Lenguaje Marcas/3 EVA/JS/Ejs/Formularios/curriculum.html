@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        textarea{background-color: green;}
+    </style>
+</head>
+<body>
+    <script>
+        function controlarCaracteres()
+        {
+            if(document.form1.curriculum.value.length>50)
+                {alert("Currículum demasiado grande.")}
+                
+            else
+                {alert("Currículum aceptado")
+                document.form1.curriculum.value="Texto por defecto..."} //BORRA EL CONTENIDO}
+        }
+    </script>
+
+    <form name="form1">
+        <textarea name="curriculum" rows="10" cols="50">Texto por defecto...</textarea>
+        <br>
+        <input type="button" value="Confirmar" onclick="controlarCaracteres()">
+    </form>
+</body>
+
+</html>

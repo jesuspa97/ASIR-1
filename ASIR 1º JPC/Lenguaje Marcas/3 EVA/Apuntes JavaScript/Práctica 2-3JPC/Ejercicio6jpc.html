@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+<body onload="nuevatirada()">
+    <script>
+        function nuevatirada(){ 
+        min=1
+        max=6
+        document.write("<h2>Jugador 1</h2>")
+        var dado11=Math.round(Math.random()*(max-min)+min)
+        document.write("<img src='./img/"+ dado11 +".jpg'>")
+        var dado12=Math.round(Math.random()*(max-min)+min)
+        document.write("<img src='./img/"+ dado12 +".jpg'>")
+        document.write("<br><br>**********************<button onclick='location.reload()'>Nueva Tirada</button>***********************")
+        document.write("<h2>Jugador 2</h2>")
+        var dado21=Math.round(Math.random()*(max-min)+min)
+        document.write("<img src='./img/"+ dado21 +".jpg'>")
+        var dado22=Math.round(Math.random()*(max-min)+min)
+        document.write("<img src='./img/"+ dado22 +".jpg'>")
+        if(dado11+dado12>dado21+dado22){
+            alert("Ha ganado el Jugador 1")
+        }
+        else if(dado11+dado12==dado21+dado22){
+            alert("EMPATE")
+        }
+        else{alert("Ha ganado el Jugador 2")}
+    }
+    </script>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <script>
+        function colorear(seleccion){
+            document.body.style.backgroundColor=seleccion.value;
+            if (document.form.radio[0].checked){
+                document.form.caja.style.backgroundColor=seleccion.value
+            }
+        }
+    </script>
+
+    <button name="Azul" id="Azul" value="blue" onclick="colorear(this)">Azul</button>
+    <button name="Amarillo" id="Amarillo" value="yellow" onclick="colorear(this)">Amarillo</button>
+    <button name="Rojo" id="Rojo" value="red" onclick="colorear(this)">Rojo</button>
+    <button name="Verde" id="Verde" value="green" onclick="colorear(this)">Verde</button>
+    <button name="Marrón" id="Marrón" value="brown" onclick="colorear(this)">Marrón</button>
+    <hr>
+<form name="form" id="form">
+    <h1>Cambiar el color de fondo del cuadro?</h1>
+    <input type="radio" name="radio" id="si">Sí
+    <input type="radio" name="radio" id="no">No <br>
+    <textarea name="caja" id="caja" cols=80 rows=10></textarea>
+</form>   
+</body>
+</html>

@@ -1,0 +1,100 @@
+<script type="text/javascript">
+		var nota1,nota2,nota3,nota4,nota5,suma,media;
+		nota1=prompt("Dime la primera nota: ","");
+		while (nota1<0 || nota1>10)
+			{
+				nota1=prompt("ERROR, Dime la primera nota: ","");
+			}
+
+		nota2=prompt("Dime la segunda nota: ","");
+		while (nota2<0 || nota2>10)
+			{
+				nota2=prompt("ERROR, Dime la segunda nota: ","");
+			}
+		nota3=prompt("Dime la tercera nota: ","");
+		while (nota3<0 || nota3>10)
+			{
+				nota3=prompt("ERROR, Dime la tercera nota: ","");
+			}
+		nota4=prompt("Dime la cuarta nota: ","");
+		while (nota4<0 || nota4>10)
+			{
+				nota4=prompt("ERROR, Dime la cuarta nota: ","");
+			}
+		nota5=prompt("Dime la quinta nota: ","");
+		while (nota5<0 || nota5>10)
+			{
+				nota5=prompt("ERROR, Dime la quinta nota: ","");
+			}
+		nota1=parseFloat(nota1);
+		nota2=parseFloat(nota2);
+		nota3=parseFloat(nota3);
+		nota4=parseFloat(nota4);
+		nota5=parseFloat(nota5);
+		suma=nota1+nota2+nota3+nota4+nota5;
+		media=suma/5;
+
+		if (media<5)
+			{
+				document.write("Insuficiente");
+			}
+			else if (media>=5 && media<6)
+			{
+				document.write("Suficiente");
+			}
+			else if (media>=6 && media<7)
+			{
+				document.write("Bien");
+			}
+			else if (media>=7 && media<9)
+			{
+				document.write("Notable");
+			}
+			else
+			{
+				document.write("Sobresaliente");
+			}
+	</script>
+
+    -------------
+    <script type="text/javascript">
+    var x;
+    numero=7
+    veces=prompt("Dime cuantos múltiplos quieres que aparezca de la serie: ","");
+    veces=parseInt(veces);
+    
+    for (x=1;x<=veces;x++)
+    {
+        if (x==veces)
+        {
+            document.write(numero);
+            break;
+        }
+        document.write(numero,"-");
+        numero=numero+7;
+    }
+    </script>
+    ------------
+    <script type="text/javascript">
+        function multiplos(valor1,valor2)
+        {
+        contador=0;
+        contador=parseInt(contador);
+        for(x=valor1;x<=valor2;x++)
+        {
+            multi=x%5;
+            if (multi==0)
+            {
+                contador=contador+1;
+                return contador
+            }
+            
+        }
+        }   
+        valor1=prompt("Dime el primer valor");
+        valor1=parseInt(valor1);
+        valor2=prompt("Dime el segundo valor");
+        valor2=parseInt(valor2);
+        multiplos(valor1,valor2);
+        document.write("La cantidad de multiplos de 5 es: ",contador);
+    </script>

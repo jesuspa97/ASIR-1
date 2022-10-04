@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        option.rojo{background-color: red;}
+    </style>
+</head>
+<body>
+    <script>
+        function cambiarColor()
+        {
+            indice= document.form1.select1.selectedIndex;
+            texto= document.form1.select1.options[indice].text;
+            valor= document.form1.select1.options[indice].value;
+            alert('El índice : '+ indice);
+            alert('El Texto es : '+ texto);
+            alert('El valor es : '+ valor);
+            document.body.style.backgroundColor=valor;
+        }
+    </script>
+
+    <form name="form1">
+        <select size="7" name="select1" onchange="cambiarColor()">
+            <option value="#FF0000" style="background-color: red">Rojo</option>
+            <option value="green" style="background-color: green">Verde</option>
+            <option value="blue" style="background-color: blue">Azul</option>
+            <option value="yellow" style="background-color: yellow">Amarillo</option>
+        </select>
+    </form>
+</body>
+
+</html>

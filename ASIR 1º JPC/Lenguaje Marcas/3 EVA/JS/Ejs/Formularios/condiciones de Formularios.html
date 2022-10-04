@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sign_check()
+        {
+            var email = document.getElementById("sign_email").value;
+            var user = document.getElementById("sign_user").value;
+            var password = document.getElementById("sign_password").value;
+            var confirm = document.getElementById("sign_confirm").value;
+
+            if(email.length <=7)
+            {
+                alert("El correo no cumple la longitud mínima.");
+                document.getElementById("sign_email").focus();
+            }
+
+            if(email.indexOf("@")==-1) //me dice posición de caracter/cadena
+            {
+                alert("El correo no contiene el caracter @.");
+                document.getElementById("sign_email").focus();
+            }
+
+            if(sign_password != sign_confirm)
+            {
+                document.getElementById("sign_alert").innerHTML="Las contraseñas NO coinciden." ; 
+            }
+        }
+    </script>
+
+    <h1>FORMULARIO</h1>
+    
+    <form id="sign_up" name"sign_up">
+        <input type="text" id="sign_email" placeholder="Correo Electrónico" name="sign_email"><br>
+        <input type="text" id="sign_user" placeholder="Usuario" name="sign_user"><br>
+        <input type="text" id="sign_password" placeholder="Contraseña" name="sign_password">
+        <span id="sign_alert"></span> <br>
+        <input type="text" id="sign_confirm" placeholder="Confirmar Contraseña" name="sign_confirm"><br>
+        
+    </form>
+    <button onclick="sign_check()">ENVIAR</button>
+</body>
+</html>

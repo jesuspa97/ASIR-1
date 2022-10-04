@@ -1,0 +1,33 @@
+<!--Desarrollar una función que retorne la cantidad de dígitos que tiene una variable
+entera positiva.-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <script>
+        function digitos(num1)
+        {
+        if (num1<10)
+        {document.write('El número '+ num1 +' tiene 1 cifra.')}
+        else if (num1<100)
+        {document.write('El número '+ num1 +' tiene 2 cifras.')}
+        else if (num1<1000)
+        {document.write('El número '+ num1 +' tiene 3 cifras.')}
+        else if (num1<10000)
+        {document.write('El número '+ num1 +' tiene 4 cifras.')}
+        else if (num1<100000)
+        {document.write('El número '+ num1 +' tiene 5 cifras.')}
+        else{document.write('El número '+ num1 +' tiene 6 cifras.')}
+        }
+        var num1=parseInt(prompt('Indícame un número : '))
+        digitos(num1)
+       
+    </script>
+     
+ </body>
+ </html>

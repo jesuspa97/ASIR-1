@@ -1,0 +1,488 @@
+Create database practica31;
+
+use practica31;
+CREATE TABLE POKEMON (
+  N_POKEDEX int(3) NOT NULL,
+  NOMBRE varchar(20) NOT NULL,
+  TIPO1 varchar(20) NOT NULL,
+  TIPO2 varchar(20),
+  EVOLUCION ENUM("SI","NO") DEFAULT "NO" NOT NULL,
+  ID_UBICACION VARCHAR(3)NOT NULL,
+  ID_POKEBALL VARCHAR (2)NOT NULL,
+  PRIMARY KEY (N_POKEDEX)
+);
+
+
+INSERT INTO POKEMON VALUES(1,"Bulbasaur","PLANTA","VENENO","SI","PBS","PB");
+INSERT INTO POKEMON VALUES(2,"Ivysaur","PLANTA","VENENO","SI","PBS","SB");
+INSERT INTO POKEMON VALUES(3,"Venusaur","PLANTA","VENENO","NO","ISP","UB");
+INSERT INTO POKEMON VALUES(4,"Charmander","FUEGO",NULL,"SI","CDV","PB");
+INSERT INTO POKEMON VALUES(5,"Charmeleon","FUEGO",NULL,"NO","CDK","SB");
+INSERT INTO POKEMON VALUES(6,"Charizard","FUEGO","VOLADOR","NO","CDV","UB");
+INSERT INTO POKEMON VALUES(7,"Squirtle","AGUA",NULL,"SI","PBL","PB");
+INSERT INTO POKEMON VALUES(8,"Wartortle","AGUA",NULL,"NO","CDP","SB");
+INSERT INTO POKEMON VALUES(9,"Blastoise","AGUA",NULL,"NO","ISP","UB");
+INSERT INTO POKEMON VALUES(10,"Caterpie","BICHO",NULL,"SI","CDP","PB");
+INSERT INTO POKEMON VALUES(11,"Metapod","BICHO",NULL,"SI","CDK","SB");
+INSERT INTO POKEMON VALUES(12,"Butterfree","BICHO","VOLADOR","NO","CDP","UB");
+INSERT INTO POKEMON VALUES(13,"Weedle","BICHO","VENENO ","SI","CDF","PB");
+INSERT INTO POKEMON VALUES(14,"Kakuna","BICHO","VENENO ","SI","ISC","SB");
+INSERT INTO POKEMON VALUES(15,"Beedrill","BICHO","VENENO ","NO","ISC","UB");
+INSERT INTO POKEMON VALUES(16,"Pidgey","NORMAL","VOLADOR","SI","CDP","PB");
+INSERT INTO POKEMON VALUES(17,"Pidgeotto","NORMAL","VOLADOR","SI","PBL","SB");
+INSERT INTO POKEMON VALUES(18,"Pidgeot","NORMAL","VOLADOR","NO","CDP","UB");
+INSERT INTO POKEMON VALUES(19,"Rattata","NORMAL",NULL,"SI","CDK","PB");
+INSERT INTO POKEMON VALUES(20,"Raticate","NORMAL",NULL,"NO","ISC","SB");
+INSERT INTO POKEMON VALUES(21,"Spearow","NORMAL","VOLADOR","SI","ISP","PB");
+INSERT INTO POKEMON VALUES(22,"Fearow","NORMAL","VOLADOR","NO","ISC","SB");
+INSERT INTO POKEMON VALUES(23,"Ekans","VENENO ",NULL,"SI","CDA","PB");
+INSERT INTO POKEMON VALUES(24,"Arbok","VENENO ",NULL,"NO","CDC","SB");
+INSERT INTO POKEMON VALUES(25,"Pikachu","ELECTRICO",NULL,"SI","CDF","PB");
+INSERT INTO POKEMON VALUES(26,"Raichu","ELECTRICO",NULL,"NO","PBS","SB");
+INSERT INTO POKEMON VALUES(27,"Sandshrew","TIERRA",NULL,"SI","ISF","PB");
+INSERT INTO POKEMON VALUES(28,"Sandslash","TIERRA",NULL,"NO","CDF","SB");
+INSERT INTO POKEMON VALUES(29,"Nidoran♀","VENENO ",NULL,"SI","ISC","PB");
+INSERT INTO POKEMON VALUES(30,"Nidorina","VENENO ",NULL,"SI","CDC","SB");
+INSERT INTO POKEMON VALUES(31,"Nidoqueen","VENENO ","TIERRA","NO","CDP","UB");
+INSERT INTO POKEMON VALUES(32,"Nidoran♂","VENENO ",NULL,"SI","ISF","PB");
+INSERT INTO POKEMON VALUES(33,"Nidorino","VENENO ",NULL,"SI","ISP","SB");
+INSERT INTO POKEMON VALUES(34,"Nidoking","VENENO ","TIERRA","NO","CDA","UB");
+INSERT INTO POKEMON VALUES(35,"Clefairy","HADA",NULL,"SI","CDK","PB");
+INSERT INTO POKEMON VALUES(36,"Clefable","HADA",NULL,"NO","PBP","SB");
+INSERT INTO POKEMON VALUES(37,"Vulpix","FUEGO",NULL,"SI","ISF","PB");
+INSERT INTO POKEMON VALUES(38,"Ninetales","FUEGO",NULL,"NO","PBP","SB");
+INSERT INTO POKEMON VALUES(39,"Jigglypuff","NORMAL",NULL,"SI","PBP","PB");
+INSERT INTO POKEMON VALUES(40,"Wigglytuff","NORMAL",NULL,"NO","ISC","SB");
+INSERT INTO POKEMON VALUES(41,"Zubat","VENENO ","VOLADOR","SI","CDA","PB");
+INSERT INTO POKEMON VALUES(42,"Golbat","VENENO ","VOLADOR","NO","ISF","SB");
+INSERT INTO POKEMON VALUES(43,"Oddish","PLANTA","VENENO ","SI","PBP","PB");
+INSERT INTO POKEMON VALUES(44,"Gloom","PLANTA","VENENO ","SI","CDF","SB");
+INSERT INTO POKEMON VALUES(45,"Vileplume","PLANTA","VENENO ","SI","CDK","UB");
+INSERT INTO POKEMON VALUES(46,"Paras","BICHO","PLANTA","NO","PBL","PB");
+INSERT INTO POKEMON VALUES(47,"Parasect","BICHO","PLANTA","NO","ISC","SB");
+INSERT INTO POKEMON VALUES(48,"Venonat","BICHO","VENENO ","SI","ISF","PB");
+INSERT INTO POKEMON VALUES(49,"Venomoth","BICHO","VENENO ","NO","PBS","SB");
+INSERT INTO POKEMON VALUES(50,"Diglett","TIERRA",NULL,"SI","CDA","PB");
+INSERT INTO POKEMON VALUES(51,"Dugtrio","TIERRA",NULL,"NO","CDK","SB");
+INSERT INTO POKEMON VALUES(52,"Meowth","NORMAL",NULL,"SI","PBL","PB");
+INSERT INTO POKEMON VALUES(53,"Persian","NORMAL",NULL,"NO","CDV","SB");
+INSERT INTO POKEMON VALUES(54,"Psyduck","AGUA",NULL,"SI","CDA","PB");
+INSERT INTO POKEMON VALUES(55,"Golduck","AGUA",NULL,"NO","PBS","SB");
+INSERT INTO POKEMON VALUES(56,"Mankey","LUCHA",NULL,"SI","CDV","PB");
+INSERT INTO POKEMON VALUES(57,"Primeape","LUCHA",NULL,"NO","CDA","SB");
+INSERT INTO POKEMON VALUES(58,"Growlithe","FUEGO",NULL,"SI","CDC","PB");
+INSERT INTO POKEMON VALUES(59,"Arcanine","FUEGO",NULL,"NO","PBL","SB");
+INSERT INTO POKEMON VALUES(60,"Poliwag","AGUA",NULL,"SI","PBP","PB");
+INSERT INTO POKEMON VALUES(61,"Poliwhirl","AGUA",NULL,"SI","PBL","SB");
+INSERT INTO POKEMON VALUES(62,"Poliwrath","AGUA","LUCHA","NO","ISF","UB");
+INSERT INTO POKEMON VALUES(63,"Abra","PSIQUICO",NULL,"SI","CDP","PB");
+INSERT INTO POKEMON VALUES(64,"Kadabra","PSIQUICO",NULL,"SI","CDV","SB");
+INSERT INTO POKEMON VALUES(65,"Alakazam","PSIQUICO",NULL,"NO","CDV","UB");
+INSERT INTO POKEMON VALUES(66,"Machop","LUCHA",NULL,"SI","CDF","PB");
+INSERT INTO POKEMON VALUES(67,"Machoke","LUCHA",NULL,"SI","CDC","SB");
+INSERT INTO POKEMON VALUES(68,"Machamp","LUCHA",NULL,"NO","PBS","UB");
+INSERT INTO POKEMON VALUES(69,"Bellsprout","PLANTA","VENENO ","SI","CDP","PB");
+INSERT INTO POKEMON VALUES(70,"Weepinbell","PLANTA","VENENO ","SI","CDK","SB");
+INSERT INTO POKEMON VALUES(71,"Victreebel","PLANTA","VENENO ","NO","ISC","UB");
+INSERT INTO POKEMON VALUES(72,"Tentacool","AGUA","VENENO ","SI","CDP","PB");
+INSERT INTO POKEMON VALUES(73,"Tentacruel","AGUA","VENENO ","NO","ISC","SB");
+INSERT INTO POKEMON VALUES(74,"Geodude","ROCA","TIERRA","SI","CDF","PB");
+INSERT INTO POKEMON VALUES(75,"Graveler","ROCA","TIERRA","NO","CDK","SB");
+INSERT INTO POKEMON VALUES(76,"Golem","ROCA","TIERRA","NO","CDK","UB");
+INSERT INTO POKEMON VALUES(77,"Ponyta","FUEGO",NULL,"SI","CDF","PB");
+INSERT INTO POKEMON VALUES(78,"Rapidash","FUEGO",NULL,"NO","CDC","SB");
+INSERT INTO POKEMON VALUES(79,"Slowpoke","AGUA","PSIQUICO","SI","CDA","PB");
+INSERT INTO POKEMON VALUES(80,"Slowbro","AGUA","PSIQUICO","NO","CDV","SB");
+INSERT INTO POKEMON VALUES(81,"Magnemite","ELECTRICO","ACERO","SI","CDK","PB");
+INSERT INTO POKEMON VALUES(82,"Magneton","ELECTRICO","ACERO","NO","ISC","SB");
+INSERT INTO POKEMON VALUES(83,"Farfetch'd","NORMAL","VOLADOR","NO","PBS","PB");
+INSERT INTO POKEMON VALUES(84,"Doduo","NORMAL","VOLADOR","SI","CDA","PB");
+INSERT INTO POKEMON VALUES(85,"Dodrio","NORMAL","VOLADOR","NO","CDV","PB");
+INSERT INTO POKEMON VALUES(86,"Seel","AGUA",NULL,"SI","ISF","GB");
+INSERT INTO POKEMON VALUES(87,"Dewgong","AGUA","HIELO","NO","PBP","PB");
+INSERT INTO POKEMON VALUES(88,"Grimer","VENENO ",NULL,"SI","PBL","GB");
+INSERT INTO POKEMON VALUES(89,"Muk","VENENO ",NULL,"NO","ISP","PB");
+INSERT INTO POKEMON VALUES(90,"Shellder","AGUA",NULL,"SI","ISP","GB");
+INSERT INTO POKEMON VALUES(91,"Cloyster","AGUA","HIELO","NO","ISF","GB");
+INSERT INTO POKEMON VALUES(92,"Gastly","FANTASMA","VENENO ","SI","ISP","PB");
+INSERT INTO POKEMON VALUES(93,"Haunter","FANTASMA","VENENO ","SI","CDV","SB");
+INSERT INTO POKEMON VALUES(94,"Gengar","FANTASMA","VENENO ","NO","CDA","UB");
+INSERT INTO POKEMON VALUES(95,"Onix","ROCA","TIERRA","NO","CDC","UB");
+INSERT INTO POKEMON VALUES(96,"Drowzee","PSIQUICO",NULL,"SI","CDA","PB");
+INSERT INTO POKEMON VALUES(97,"Hypno","PSIQUICO",NULL,"NO","PBS","SB");
+INSERT INTO POKEMON VALUES(98,"Krabby","AGUA",NULL,"SI","PBS","PB");
+INSERT INTO POKEMON VALUES(99,"Kingler","AGUA",NULL,"NO","ISF","SB");
+INSERT INTO POKEMON VALUES(100,"Voltorb","ELECTRICO",NULL,"SI","CDF","SB");
+INSERT INTO POKEMON VALUES(101,"Electrode","ELECTRICO",NULL,"NO","ISP","PB");
+INSERT INTO POKEMON VALUES(102,"Exeggcute","PLANTA","PSIQUICO","SI","CDC","SB");
+INSERT INTO POKEMON VALUES(103,"Exeggutor","PLANTA","PSIQUICO","NO","ISP","PB");
+INSERT INTO POKEMON VALUES(104,"Cubone","TIERRA",NULL,"SI","CDF","SB");
+INSERT INTO POKEMON VALUES(105,"Marowak","TIERRA",NULL,"NO","CDV","SB");
+INSERT INTO POKEMON VALUES(106,"Hitmonlee","LUCHA",NULL,"NO","PBP","UB");
+INSERT INTO POKEMON VALUES(107,"Hitmonchan","LUCHA",NULL,"NO","PBS","UB");
+INSERT INTO POKEMON VALUES(108,"Lickitung","NORMAL",NULL,"NO","ISC","SB");
+INSERT INTO POKEMON VALUES(109,"Koffing","VENENO ",NULL,"SI","ISP","PB");
+INSERT INTO POKEMON VALUES(110,"Weezing","VENENO ",NULL,"NO","PBL","PB");
+INSERT INTO POKEMON VALUES(111,"Rhyhorn","TIERRA","ROCA","SI","CDC","SB");
+INSERT INTO POKEMON VALUES(112,"Rhydon","TIERRA","ROCA","NO","ISP","PB");
+INSERT INTO POKEMON VALUES(113,"Chansey","NORMAL",NULL,"NO","CDV","PB");
+INSERT INTO POKEMON VALUES(114,"Tangela","PLANTA",NULL,"NO","PBL","PB");
+INSERT INTO POKEMON VALUES(115,"Kangaskhan","NORMAL",NULL,"NO","ISP","SB");
+INSERT INTO POKEMON VALUES(116,"Horsea","AGUA",NULL,"SI","CDA","SB");
+INSERT INTO POKEMON VALUES(117,"Seadra","AGUA",NULL,"NO","PBL","PB");
+INSERT INTO POKEMON VALUES(118,"Goldeen","AGUA",NULL,"SI","CDC","PB");
+INSERT INTO POKEMON VALUES(119,"Seaking","AGUA",NULL,"NO","PBP","SB");
+INSERT INTO POKEMON VALUES(120,"Staryu","AGUA",NULL,"SI","PBL","PB");
+INSERT INTO POKEMON VALUES(121,"Starmie","AGUA",NULL,"NO","ISF","PB");
+INSERT INTO POKEMON VALUES(122,"Mr. Mime","PSIQUICO","HADA","NO","CDC","PB");
+INSERT INTO POKEMON VALUES(123,"Scyther","BICHO",NULL,"NO","ISP","SB");
+INSERT INTO POKEMON VALUES(124,"Jynx","HIELO","PSIQUICO","NO","PBP","PB");
+INSERT INTO POKEMON VALUES(125,"Electabuzz","ELECTRICO",NULL,"NO","PBP","SB");
+INSERT INTO POKEMON VALUES(126,"Magmar","FUEGO",NULL,"NO","CDA","SB");
+INSERT INTO POKEMON VALUES(127,"Pinsir","BICHO",NULL,"NO","CDK","PB");
+INSERT INTO POKEMON VALUES(128,"Tauros","NORMAL",NULL,"NO","PBL","PB");
+INSERT INTO POKEMON VALUES(129,"Magikarp","AGUA",NULL,"SI","CDC","PB");
+INSERT INTO POKEMON VALUES(130,"Gyarados","AGUA","VOLADOR","NO","PBS","UB");
+INSERT INTO POKEMON VALUES(131,"Lapras","AGUA","HIELO","NO","CDF","UB");
+INSERT INTO POKEMON VALUES(132,"Ditto","NORMAL",NULL,"NO","CDP","PB");
+INSERT INTO POKEMON VALUES(133,"Eevee","NORMAL",NULL,"SI","ISF","UB");
+INSERT INTO POKEMON VALUES(134,"Vaporeon","AGUA",NULL,"NO","PBS","SB");
+INSERT INTO POKEMON VALUES(135,"Jolteon","ELECTRICO",NULL,"NO","CDF","SB");
+INSERT INTO POKEMON VALUES(136,"Flareon","FUEGO",NULL,"NO","PBP","UB");
+INSERT INTO POKEMON VALUES(137,"Porygon","NORMAL",NULL,"NO","CDA","SB");
+INSERT INTO POKEMON VALUES(138,"Omanyte","ROCA","AGUA","SI","ISF","PB");
+INSERT INTO POKEMON VALUES(139,"Omastar","ROCA","AGUA","NO","PBS","PB");
+INSERT INTO POKEMON VALUES(140,"Kabuto","ROCA","AGUA","NO","CDP","PB");
+INSERT INTO POKEMON VALUES(141,"Kabutops","ROCA","AGUA","NO","CDK","UB");
+INSERT INTO POKEMON VALUES(142,"Aerodactyl","ROCA","VOLADOR","NO","CDV","UB");
+INSERT INTO POKEMON VALUES(143,"Snorlax","NORMAL",NULL,"NO","ISF","UB");
+INSERT INTO POKEMON VALUES(144,"Articuno","HIELO","VOLADOR","NO","ISC","MB");
+INSERT INTO POKEMON VALUES(145,"Zapdos","ELECTRICO","VOLADOR","NO","ISP","MB");
+INSERT INTO POKEMON VALUES(146,"Moltres","FUEGO","VOLADOR","NO","ISF","MB");
+INSERT INTO POKEMON VALUES(147,"Dratini","DRAGÓN",NULL,"SI","PBL","PB");
+INSERT INTO POKEMON VALUES(148,"Dragonair","DRAGÓN",NULL,"SI","CDP","SB");
+INSERT INTO POKEMON VALUES(149,"Dragonite","DRAGÓN","VOLADOR","NO","ISC","UB");
+INSERT INTO POKEMON VALUES(150,"Mewtwo","PSIQUICO",NULL,"NO","CDC","MB"); 
+INSERT INTO POKEMON VALUES(151,"Mew","PSIQUICO",NULL,"NO","CDF","MB"); 
+
+---------------------------------------------------
+CREATE TABLE POKEBALL (
+  ID_POKEBALL VARCHAR (2)NOT NULL,
+  NOMBRE_POKEBALL varchar(30) NOT NULL,
+  CAPTURA_PORCENTAJE int(3) NOT NULL,
+  PRECIO INT(10) NOT NULL,
+  PRIMARY KEY (ID_POKEBALL)
+);
+
+INSERT INTO POKEBALL VALUES("PB","POKEBALL",42,100); 
+INSERT INTO POKEBALL VALUES("SB","SUPERBALL",57,200); 
+INSERT INTO POKEBALL VALUES("UB","ULTRABALL",73,3000); 
+INSERT INTO POKEBALL VALUES("MB","MASTERBALL",100,1000000); 
+
+---------------------------------------------------
+CREATE TABLE MOS (
+  ID_MO INT(2)NOT NULL AUTO_INCREMENT,
+  NOMBRE_MO varchar(30) NOT NULL,
+  ID_UBICACION VARCHAR(3) NOT NULL,
+  OBJETIVO VARCHAR(10) NOT NULL,
+  PRIMARY KEY (ID_MO)
+);
+
+INSERT INTO MOS (NOMBRE_MO,ID_UBICACION,OBJETIVO) VALUES("CORTE","CDK","ARBOL"); 
+INSERT INTO MOS (NOMBRE_MO,ID_UBICACION,OBJETIVO) VALUES("VUELO","PBL","AIRE");
+INSERT INTO MOS (NOMBRE_MO,ID_UBICACION,OBJETIVO) VALUES("SURF","ISF","LAGO");
+INSERT INTO MOS (NOMBRE_MO,ID_UBICACION,OBJETIVO) VALUES("FUERZA","CDF","CAJA");
+INSERT INTO MOS (NOMBRE_MO,ID_UBICACION,OBJETIVO) VALUES("ROMPE_ROCAS","PBP","ROCA");
+
+---------------------------------------------------
+CREATE TABLE UBICACION (
+  ID_UBICACION VARCHAR (3)NOT NULL,
+  NOMBRE_UBICACION varchar(30) NOT NULL,
+  ID_GIMNASIO VARCHAR(10),
+  TIENE_LEGENDARIO ENUM("SI","NO") DEFAULT "NO" NOT NULL,
+  POBLACION INT(10) NOT NULL,
+  PRIMARY KEY (ID_UBICACION)
+);
+
+INSERT INTO UBICACION VALUES("PBP","Pueblo Paleta","NPC2","NO",1520);
+INSERT INTO UBICACION VALUES("CDV","Ciudad Verde",NULL,"NO",65841);
+INSERT INTO UBICACION VALUES("CDP","Ciudad Plateada","NPC3","NO",147992);
+INSERT INTO UBICACION VALUES("CDC","Ciudad Celeste",NULL,"SI",26328);
+INSERT INTO UBICACION VALUES("CDK","Ciudad Carmín","NPC1","NO",25476);
+INSERT INTO UBICACION VALUES("PBL","Pueblo Lavanda","NPC4","NO",856);
+INSERT INTO UBICACION VALUES("CDA","Ciudad Azafrán",NULL,"NO",73223);
+INSERT INTO UBICACION VALUES("CDF","Ciudad Fucsia","NPC5","SI",253689);
+INSERT INTO UBICACION VALUES("ISC","Isla Canela","NPC6","SI",562);
+INSERT INTO UBICACION VALUES("PBS","Pueblo Sésamo",NULL,"NO",115);
+INSERT INTO UBICACION VALUES("ISP","Isla Petalia","NPC7","SI",4656);
+INSERT INTO UBICACION VALUES("ISF","Isla Flaurelia","NPC8","SI",3571);
+
+---------------------------------------------------
+CREATE TABLE GIMNASIO (
+  ID_GIMNASIO VARCHAR(10)NOT NULL,
+  NOMBRE_LIDER varchar(50) NOT NULL,
+  TIPO_GIMNASIO VARCHAR(30) NOT NULL,
+  NOMBRE_MEDALLA VARCHAR(10) NOT NULL,
+  ID_UBICACION VARCHAR (3)NOT NULL,
+  ID_MO INT(2),
+  PRIMARY KEY (ID_GIMNASIO)
+);
+
+INSERT INTO GIMNASIO VALUES("NPC1","BROCK","ROCA","MARMOLITA","CDK",01);
+INSERT INTO GIMNASIO VALUES("NPC2","CAPITAN_ANTHONY","ELECTRICO","CHISPITA","PBP",05);
+INSERT INTO GIMNASIO VALUES("NPC3","LANA","HIELO","CARAMBANITA","CDP",NULL);
+INSERT INTO GIMNASIO VALUES("NPC4","SURFISTA_FU","AGUA","OLEADITA","PBL",02);
+INSERT INTO GIMNASIO VALUES("NPC5","CELIA","FUEGO","LLAMITA","CDF",04);
+INSERT INTO GIMNASIO VALUES("NPC6","CHARLES","PLANTA","MARGARITA","ISC",NULL);
+INSERT INTO GIMNASIO VALUES("NPC7","MIA","NORMAL","NORMALITA","ISP",NULL);
+INSERT INTO GIMNASIO VALUES("NPC8","GIOVANNI","TIERRA","FANGONITA","ISF",03);
+
+---------------------------------------------------
+
+---6. Consultas:
+  ---a. Crea 10 búsquedas sencillas usando IN, BETWEEN, ... 
+    SELECT ID_POKEBALL FROM POKEBALL WHERE PRECIO BETWEEN 50 AND 800 ORDER BY NOMBRE_POKEBALL;
+
+    SELECT NOMBRE_POKEBALL FROM POKEBALL WHERE NOT CAPTURA_PORCENTAJE BETWEEN 60 AND 80;
+
+    SELECT TIPO1,TIPO2 FROM POKEMON WHERE N_POKEDEX BETWEEN 20 AND 30 ORDER BY 2;
+
+        +--------------+
+        | NOMBRE_LIDER |
+        +--------------+
+        | CELIA        |
+        | MIA          |
+        | BROCK        |
+        +--------------+
+        3 rows in set (0.00 sec)
+
+    SELECT N_POKEDEX FROM POKEMON WHERE TIPO1 IN ("HIELO","TIERRA") ORDER BY NOMBRE;
+
+    SELECT POBLACION FROM UBICACION WHERE ID_UBICACION IN("ISC","ISF","ISP");
+
+    SELECT NOMBRE_UBICACION FROM UBICACION WHERE POBLACION BETWEEN 8000 AND 80000;
+
+    SELECT ID_GIMNASIO FROM GIMNASIO WHERE NOT ID_MO BETWEEN 3 AND 5;
+
+    SELECT NOMBRE_LIDER FROM GIMNASIO WHERE NOMBRE_MEDALLA IN ("NORMALITA","MARMOLITA","LLAMITA") ORDER BY TIPO_GIMNASIO;
+
+-------------------
+    SELECT ID_MO FROM MOS WHERE NOT OBJETIVO IN ("ARBOL","CAJA");
+          +-------+
+          | ID_MO |
+          +-------+
+          |     2 |
+          |     3 |
+          |     5 |
+          +-------+
+      3 rows in set (0.00 sec)
+
+    SELECT NOMBRE FROM POKEMON WHERE EVOLUCION IN("SI") LIMIT 10;
+
+    SELECT * FROM POKEMON LIMIT 10;
+
+    SELECT N_POKEDEX FROM POKEMON WHERE NOMBRE LIKE"B%" ORDER BY TIPO1;
+    +-----------+
+    | N_POKEDEX |
+    +-----------+
+    |        12 |
+    |        15 |
+    |         1 |
+    |        69 |
+    +-----------+
+    4 rows in set (0.00 sec)
+
+    SELECT NOMBRE_UBICACION AS"UBICACIONES IMPORTANTES" FROM UBICACION WHERE TIENE_LEGENDARIO="SI" OR ID_GIMNASIO IS NOT NULL;
+
+    SELECT TIPO_GIMNASIO  FROM GIMNASIO WHERE ID_MO IS NULL;
+    +---------------+
+    | TIPO_GIMNASIO |
+    +---------------+
+    | HIELO         |
+    | PLANTA        |
+    | NORMAL        |
+    +---------------+
+    3 rows in set (0.00 sec)
+
+    SELECT ID_UBICACION FROM UBICACION WHERE POBLACION>5200;
+    +--------------+
+    | ID_UBICACION |
+    +--------------+
+    | CDA          |
+    | CDC          |
+    | CDF          |
+    | CDK          |
+    | CDP          |
+    | CDV          |
+    +--------------+
+    6 rows in set (0.00 sec)
+
+
+  ---b. Crea 5 búsquedas con Subselect 
+    SELECT NOMBRE_POKEBALL,ID_POKEBALL FROM POKEBALL WHERE PRECIO = (SELECT MAX(PRECIO) FROM POKEBALL);
+    +-----------------+-------------+
+    | NOMBRE_POKEBALL | ID_POKEBALL |
+    +-----------------+-------------+
+    | MASTERBALL      | MB          |
+    +-----------------+-------------+
+    1 row in set (0.00 sec)
+
+    SELECT N_POKEDEX,TIPO1,TIPO2 FROM POKEMON WHERE NOT CHAR_LENGTH(NOMBRE) < (SELECT AVG(CHAR_LENGTH(NOMBRE))FROM POKEMON);
+
+    SELECT ID_UBICACION,TIENE_LEGENDARIO FROM UBICACION WHERE POBLACION > (SELECT MIN(POBLACION)FROM UBICACION) LIMIT 3;
+    +--------------+------------------+
+    | ID_UBICACION | TIENE_LEGENDARIO |
+    +--------------+------------------+
+    | CDA          | NO               |
+    | CDC          | SI               |
+    | CDF          | SI               |
+    +--------------+------------------+
+    3 rows in set (0.00 sec)
+
+    SELECT NOMBRE_LIDER FROM GIMNASIO WHERE (ID_UBICACION LIKE "I%" AND ID_MO IS NOT NULL) OR (ID_MO > (SELECT AVG(ID_MO)FROM GIMNASIO));
+
+    SELECT NOMBRE_MO,OBJETIVO FROM MOS WHERE ID_MO>=(SELECT MIN(ID_MO)*3 FROM MOS);
+    +-------------+----------+
+    | NOMBRE_MO   | OBJETIVO |
+    +-------------+----------+
+    | SURF        | LAGO     |
+    | FUERZA      | CAJA     |
+    | ROMPE_ROCAS | ROCA     |
+    +-------------+----------+
+    3 rows in set (0.00 sec)
+
+
+  ---c. Crea 5 búsquedas con Join
+    SELECT GIMNASIO.NOMBRE_LIDER,GIMNASIO.ID_GIMNASIO,UBICACION.NOMBRE_UBICACION FROM GIMNASIO,UBICACION WHERE GIMNASIO.ID_UBICACION=UBICACION.ID_UBICACION;
+    +-----------------+-------------+------------------+
+    | NOMBRE_LIDER    | ID_GIMNASIO | NOMBRE_UBICACION |
+    +-----------------+-------------+------------------+
+    | BROCK           | NPC1        | Ciudad Carmín    |
+    | CAPITAN_ANTHONY | NPC2        | Pueblo Paleta    |
+    | LANA            | NPC3        | Ciudad Plateada  |
+    | SURFISTA_FU     | NPC4        | Pueblo Lavanda   |
+    | CELIA           | NPC5        | Ciudad Fucsia    |
+    | CHARLES         | NPC6        | Isla Canela      |
+    | MIA             | NPC7        | Isla Petalia     |
+    | GIOVANNI        | NPC8        | Isla Flaurelia   |
+    +-----------------+-------------+------------------+
+    8 rows in set (0.00 sec)
+
+    SELECT POKEMON.N_POKEDEX,POKEMON.NOMBRE,POKEBALL.CAPTURA_PORCENTAJE FROM POKEMON,POKEBALL WHERE POKEMON.ID_POKEBALL=POKEBALL.ID_POKEBALL AND PRECIO > 300;
+
+    SELECT POKEMON.NOMBRE,POKEMON.ID_POKEBALL,GIMNASIO.NOMBRE_MEDALLA FROM POKEMON,GIMNASIO WHERE POKEMON.TIPO2=GIMNASIO.TIPO_GIMNASIO;
+
+    SELECT UBICACION.ID_UBICACION,GIMNASIO.ID_GIMNASIO,UBICACION.POBLACION FROM UBICACION,GIMNASIO WHERE UBICACION.ID_UBICACION=GIMNASIO.ID_UBICACION AND UBICACION.POBLACION>(SELECT AVG(POBLACION)FROM UBICACION);
+    +--------------+-------------+-----------+
+    | ID_UBICACION | ID_GIMNASIO | POBLACION |
+    +--------------+-------------+-----------+
+    | CDP          | NPC3        |    147992 |
+    | CDF          | NPC5        |    253689 |
+    +--------------+-------------+-----------+
+    2 rows in set (0.00 sec)
+
+    SELECT GIMNASIO.ID_GIMNASIO,GIMNASIO.NOMBRE_LIDER,UBICACION.TIENE_LEGENDARIO,MOS.NOMBRE_MO,MOS.OBJETIVO FROM GIMNASIO,UBICACION,MOS WHERE UBICACION.ID_UBICACION=GIMNASIO.ID_UBICACION AND GIMNASIO.ID_MO=MOS.ID_MO AND GIMNASIO.TIPO_GIMNASIO NOT LIKE ("T%");
+    +-------------+-----------------+------------------+-------------+----------+
+    | ID_GIMNASIO | NOMBRE_LIDER    | TIENE_LEGENDARIO | NOMBRE_MO   | OBJETIVO |
+    +-------------+-----------------+------------------+-------------+----------+
+    | NPC1        | BROCK           | NO               | CORTE       | ARBOL    |
+    | NPC2        | CAPITAN_ANTHONY | NO               | ROMPE_ROCAS | ROCA     |
+    | NPC4        | SURFISTA_FU     | NO               | VUELO       | AIRE     |
+    | NPC5        | CELIA           | SI               | FUERZA      | CAJA     |
+    +-------------+-----------------+------------------+-------------+----------+
+    4 rows in set (0.00 sec)
+
+  ---d. Haz 5 Actualizaciones de las tablas con condiciones. 
+    UPDATE POKEBALL SET PRECIO=1.5*PRECIO;
+    Query OK, 4 rows affected (0.06 sec)
+    Rows matched: 4  Changed: 4  Warnings: 0
+
+    UPDATE UBICACION SET POBLACION=POBLACION/1.2 WHERE POBLACION>12000;
+
+    INSERT INTO POKEMON VALUES(152,"GROUDON","FUEGO","TIERRA","NO","ISF","MB");
+    Query OK, 1 row affected (0.02 sec)
+
+    UPDATE POKEMON SET TIPO2="OSCURIDAD" WHERE NOMBRE="GENGAR";
+
+    UPDATE POKEMON SET TIPO1="SEXY" WHERE NOMBRE="GROUDON";
+
+    UPDATE GIMNASIO SET NOMBRE_LIDER="Sergi-Guapo" WHERE ID_MO=4;
+    Query OK, 1 row affected (0.05 sec)
+    Rows matched: 1  Changed: 1  Warnings: 0
+
+  ---e. Borra alguna fila 
+    DELETE FROM POKEMON WHERE TIPO2 IS NULL;
+    Query OK, 88 rows affected (0.03 sec)
+
+---7. Uso de Funciones. Aplica 5 funciones de las vistas en clase en algún ejemplo.
+    SELECT GROUP_CONCAT(DISTINCT TIPO1) AS "TODOS LOS TIPOS DE POKEMON QUE EXISTEN" FROM POKEMON;
+    +---------------------------------------------------------------------------------------------+
+    | TODOS LOS TIPOS DE POKEMON QUE EXISTEN                                                      |
+    +---------------------------------------------------------------------------------------------+
+    | PLANTA,FUEGO,BICHO,NORMAL,VENENO ,AGUA,ROCA,ELECTRICO,FANTASMA,TIERRA,PSIQUICO,HIELO,DRAGÓN |
+    +---------------------------------------------------------------------------------------------+
+    1 row in set (0.02 sec)
+
+    SELECT LEFT(NOMBRE_MEDALLA,6) FROM GIMNASIO;
+    +------------------------+
+    | LEFT(NOMBRE_MEDALLA,6) |
+    +------------------------+
+    | MARMOL                 |
+    | CHISPI                 |
+    | CARAMB                 |
+    | OLEADI                 |
+    | LLAMIT                 |
+    | MARGAR                 |
+    | NORMAL                 |
+    | FANGON                 |
+    +------------------------+
+    8 rows in set (0.02 sec)
+
+    SELECT LOWER(ID_UBICACION),LOWER(NOMBRE_UBICACION) FROM UBICACION;
+    +---------------------+-------------------------+
+    | LOWER(ID_UBICACION) | LOWER(NOMBRE_UBICACION) |
+    +---------------------+-------------------------+
+    | cda                 | ciudad azafrán          |
+    | cdc                 | ciudad celeste          |
+    | cdf                 | ciudad fucsia           |
+    | cdk                 | ciudad carmín           |
+    | cdp                 | ciudad plateada         |
+    | cdv                 | ciudad verde            |
+    | isc                 | isla canela             |
+    | isf                 | isla flaurelia          |
+    | isp                 | isla petalia            |
+    | pbl                 | pueblo lavanda          |
+    | pbp                 | pueblo paleta           |
+    | pbs                 | pueblo sésamo           |
+    +---------------------+-------------------------+
+    12 rows in set (0.01 sec)
+
+    SELECT SUBSTRING_INDEX(NOMBRE_POKEBALL,"B",1) AS "CALIDAD",SUBSTRING(NOMBRE_POKEBALL,-4) FROM POKEBALL;
+    +---------+-------------------------------+
+    | CALIDAD | SUBSTRING(NOMBRE_POKEBALL,-4) |
+    +---------+-------------------------------+
+    | MASTER  | BALL                          |
+    | POKE    | BALL                          |
+    | SUPER   | BALL                          |
+    | ULTRA   | BALL                          |
+    +---------+-------------------------------+
+    4 rows in set (0.00 sec)
+
+    SELECT CONCAT(ID_UBICACION,POBLACION,TIENE_LEGENDARIO) AS "SUPERCODIGO UBICACION"FROM UBICACION;
+    +-----------------------+
+    | SUPERCODIGO UBICACION |
+    +-----------------------+
+    | CDA73223NO            |
+    | CDC26328SI            |
+    | CDF253689SI           |
+    | CDK25476NO            |
+    | CDP147992NO           |
+    | CDV65841NO            |
+    | ISC562SI              |
+    | ISF3571SI             |
+    | ISP4656SI             |
+    | PBL856NO              |
+    | PBP1520NO             |
+    | PBS115NO              |
+    +-----------------------+
+    12 rows in set (0.00 sec)

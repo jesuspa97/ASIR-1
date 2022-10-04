@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formularios 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form {
+            color: rgba(0, 0, 0, 0.795);
+        }
+        input {
+            border: 0px;
+            box-shadow: 1px 1px 5px black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function cambiarColor() {
+            indice = document.form1.select1.selectedIndex;
+            texto = document.form1.select1.options[indice].text;
+            valor = document.form1.select1.options[indice].value;
+            alert("El indice es: " + indice);
+            alert("EL texto es: " + texto);
+            alert("El valor es: " + valor);
+            document.body.style.backgroundColor = valor; //no hemos dado esto
+        }
+        function resetColor() {
+            document.body.style.backgroundColor = "White";
+        }
+        
+    </script>
+<h1>Cambio de color</h1>
+<form name="form1">  
+
+    <label for="user">Seleccione un color:</label>
+    <select size=1 name="select1" onchange=cambiarColor()>
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="#81F0EB">Azul</option>
+        <option value="pink">Rosa</option>
+    </select>
+    <input type="button" value="Reset" onclick=resetColor()>
+
+        
+    </form>
+</body>
+</html>

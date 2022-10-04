@@ -1,0 +1,294 @@
+body{
+    font-family: "gorock";
+    background-image: url(https://img.freepik.com/foto-gratis/textura-piedra-negra-fondo-pizarra-oscura-vista-superior_88281-1206.jpg?size=626&ext=jpg);
+    background-size: 102%;
+    color: black;
+}
+.fondo{width: 100%;
+    height: auto;
+    background-size: 100%;
+}
+
+div.registrate{
+    width: 99%;
+    height: 30vh;
+    margin-top: 1vh;
+    color: white;
+}
+h1.registrate{
+    width: 35%;
+    display: inline-block;
+    margin-top: 3vh;
+    font-size: 67px;
+}
+input.registrate{
+    border: 4px yellow solid;
+    width: 30%;
+    height: 6vh;
+    display: inline-block;
+    margin-top: 4vh;
+    margin-left: -4%;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+}
+
+input.registrate:hover{
+    border: 4px yellow solid;
+    width: 30%;
+    height: 6vh;
+    display: inline-block;
+    margin-top: 4vh;
+    margin-left: -4%;
+    background-color: white;
+    color: black;
+}
+
+
+span.boton5{
+    color: white ;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0.7em 1.2em;
+    background: black;
+    position: relative;
+    border: 2px solid #ffff00;
+    outline: 1px solid;
+    outline-color: #ffff00;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    height: 1.42vh;
+    margin-top: 4.13vh;
+    text-shadow: 66px 66px 6px black;
+}
+
+span.boton5:hover{
+    box-shadow: inset 0 0 20px rgba(86, 197, 21, 0.4), 0 0 20px rgba(86, 197, 21, 0.4);
+    outline-color: rgba(86, 197, 21, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;
+}
+
+div.condiciones{
+    height: 10vh;
+    width: 130vh;
+    position: relative;
+    margin-left: 12%;
+}
+p.condiciones{
+    font-size: 30px;
+}
+
+p.condicioness{
+    font-size: 30px;
+    margin-top: 3%;
+}
+
+div.localinfo{
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 1%;
+}
+
+div.imglocalinfo{
+    width: 50%;
+    height: 40vh;
+    margin-left: 5%;
+    margin-top: 7vh;
+    background-image: url("https://dondecenamoshoy.files.wordpress.com/2015/01/img_8947.jpg");
+}
+
+div.logolocal{
+    margin-left: 69%;
+    position: relative;
+    top: -46%;
+    width: 400px;
+    height: 40vh;
+    background-image: url(./IMGs/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+div.horario{
+    width: 30%;
+    height: 26vh;
+    display: inline-block;
+    margin-left: 96vh;
+    position: relative;
+    top: -36vh;
+    color: white;
+    font-size: 50px;
+    padding-left: 10%;
+}
+
+div.datos{
+    width: 30%;
+    height: 26vh;
+    display: inline-block;
+    margin-left: 60vh;
+    position: relative;
+    top: -62.25vh;
+    color: white;
+    font-size: 50px;
+}
+
+div.legazpi{
+    width: 30%;
+    height: 26vh;
+    border: 2px lightcoral solid;
+    display: inline-block;
+    background-image: url("https://alertasubastas.com/maps/0xBD9/0xBD9722D2681911ECAB17AC07948492A1.png");
+    margin-left: 4vh;
+    position: relative;
+    top: -89vh;
+    color: white;
+    font-size: 50px;
+    
+}
+
+/*-------------------------------------------------*/
+
+div.formulario{
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 1%;
+    color: white;
+}
+
+div.form{
+    border-left: #fad340 10px solid;
+    border-right: #fad340 10px solid;
+    margin: auto;
+    width: 60%;
+    height: 73vh;    
+}
+h1.ok{
+    color: white;
+    margin-top: 2vh;
+}
+
+h2.form{background-color:hsl(235, 20%, 25%); 
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px; 
+    text-align: center;
+    font-size: 110px;
+}
+
+article.form{
+    margin-bottom: 9vh;
+    margin-left: 1%;
+    border-radius: 10px;
+    color: white;  
+}
+
+h3.form{
+    background-color: #fad340;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    color: black;
+    font-size: 50px;
+    width: 103.7vh;
+    height: 3vh;
+    text-align: center;
+    margin-top:0px;
+}
+
+input.text{
+    height: 4vh;
+    margin-top: -4vh;
+    position: relative;
+    width: 49vh;
+    margin-right: 1vh;
+    margin-left: 1vh;
+    float: left;
+    background-color: black;
+    color: white;   
+    font-size: 25px;
+}
+
+input.text:hover{
+    background-color: white;
+    color: black;
+}
+
+select{
+    height: 5vh;
+    margin-top: -4vh;
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
+    float: left;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+}
+
+.fecha{
+    height: 4vh;
+    border: #ffff00 2px solid;
+    margin-top: -4vh;
+    position: relative;
+    width: 51vh;
+    margin-right: 1vh;
+    margin-left: 26vh;
+    float: left;
+    font-size: 40px;
+    background-color: black;
+    color: white;
+}
+
+
+/*---------------------------*/
+
+button{
+    width: 7vh;
+    height: 7vh;
+    margin: 1.52vh;
+    color: white;
+    font-size: 50px;
+    background-image: url("https://img.freepik.com/foto-gratis/textura-piedra-negra-fondo-pizarra-oscura-vista-superior_88281-1206.jpg?size=626&ext=jpg");
+    margin-top: -4vh;
+}  
+
+button:focus{
+    background-image: url("https://img.freepik.com/foto-gratis/textura-piedra-negra-fondo-pizarra-oscura-vista-superior_88281-1206.jpg?size=626&ext=jpg");
+    color: #fad340;
+    border: #fad340 2px solid;
+}
+
+button.enviar{
+    width: 21vh;
+    height: 7vh;
+    color: yellow;
+    font-size: 50px;
+    background-image: url("https://img.freepik.com/foto-gratis/textura-piedra-negra-fondo-pizarra-oscura-vista-superior_88281-1206.jpg?size=626&ext=jpg");
+    margin-top: 0vh;
+    margin-left: 43vh;
+    position: relative;
+} 
+
+button.inicio{
+    width: 22vh;
+    height: 8vh;
+    margin-left: 75vh;
+    color: white;
+    font-size: 50px;
+    background-image: url(https://img.freepik.com/foto-gratis/textura-piedra-negra-fondo-pizarra-oscura-vista-superior_88281-1206.jpg?size=626&ext=jpg);
+    margin-top: 15vh;
+}
+
+a.inicio{
+    color: white;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+img.tic{
+    width: 50%;
+    height: 40vh;
+    margin-left: 23%;
+    margin-top: 0%;
+}

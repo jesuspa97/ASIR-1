@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>formularios 4</title>  
+      <script>
+        
+        function sign_check() {
+            var email = document.getElementById("sign_email").value;
+            var user = document.getElementById("sign_user").value;
+            var pass = document.getElementById("sign_pass").value;
+            var confirm = document.getElementById("sign_confirm").value;
+            if (email.length<=7) {
+                alert("El correo es demasiado corto");
+                document.getElementById("sign_email").focus();
+
+            }
+            if (pass!=confirm) {
+                document.getElementById("sign_alert").innerHTML = "Las contraseñas no son correctas"
+            }
+        }
+    </script>
+</head>
+<style>
+    input, button {
+        margin: 5px;
+    }
+</style>
+<body>
+<h1>Formulario:</h1>
+<form id="sign_up">
+    <input type="text" id="sign_email" placeholder="Email" name="sign_email"> <br>
+    <input type="text" id="sign_user" placeholder="Usuario" name="sign_user"> <br>
+    <input type="text" id="sign_pass" placeholder="Password" name="sign_pass"> <br>
+    <input type="text" id="sign_confirm" placeholder="Confirm password" name="sign_confirm"> <br>
+    <span id="sign_alert"></span>
+</form>
+    <button name="enviar" onclick=sign_check()>Enviar</button>
+
+
+</body>
+</html>

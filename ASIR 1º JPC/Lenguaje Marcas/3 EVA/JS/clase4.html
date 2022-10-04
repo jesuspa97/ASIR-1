@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function calcularimc() {
+            var altura=parseFloat(document.form.altura.value);
+            var peso=parseFloat(document.form.peso.value);
+            var IMC=peso/(altura*altura);
+            if (IMC<16) {
+                alert("Delgadez")
+            } else if (IMC>=16 && IMC<=24.99) {
+                alert("Peso Normal")
+            } else if (IMC>=25 && IMC<=29.99) {
+                alert("Sobrepeso")
+            } else {
+                alert("Obeso: Tipo 1")
+            }
+        }
+    </script>
+ 
+    <form name="form" id="form">
+        <label>Escribe tu altura actual (m): </label><input type="number" name="altura"  id="altura" /><br>
+        <label>Escribe tu peso actual (kg): </label><input type="number" name="peso" id="peso"  /><br>
+    </form>
+    <button onclick="calcularimc()">Calcular IMC</button>    
+</body>
+</html>

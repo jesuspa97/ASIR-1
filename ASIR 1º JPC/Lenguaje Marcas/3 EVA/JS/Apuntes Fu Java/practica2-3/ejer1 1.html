@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejer 1</title>
+<style>
+@font-face {
+    font-family: "Poppins";
+    src: url(fonts/Poppins-Regular.ttf);
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+.form1 {
+    margin-inline: 25%;
+}
+div {
+    margin: 1em;
+    /*border: 1px solid rosybrown;*/
+}
+.inputEdad, .inputConocer  {
+    width: 45%;
+    position: relative;
+    display:inline-block;
+}
+.enviar, .reset {
+    position: relative;
+    display:inline-block;
+    float: right;
+}
+</style>
+</head>
+<body>
+    <script>
+        nombre = document.getElementById("nombre").value;
+        apellidos = document.getElementById("apellidos").value;
+        correo = document.getElementById("correo");
+        poblacion = document.getElementById("poblacion").value;
+        provincia = document.getElementById("provincia").value;
+
+        if
+
+    </script>
+<form name="form1" class="form1">
+    <div class="inputNombre">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+    </div>
+    <div class="inputApellido">
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" id="apellidos">
+    </div>
+    <div class="inputCorreo">
+        <label for="coreo">Correo electrónico:</label>
+        <input type="email" name="correo" id="correo">
+    </div>
+    <div class="inputPoblacion">
+        <label for="poblacion">Población: </label>
+        <input type="text" name="poblacion" id="poblacion">
+    </div>
+    <div class="inputProvincia">
+        <label for="provincia">Provincia: </label>
+        <input type="text" name="provincia" id="provincia">
+    </div>
+    <div class="inputEdad">
+        <label for="edad">Edad: </label><br>
+        <input type="radio" name="edad" id="0-20"> 0-20 <br>
+        <input type="radio" name="edad" id="20-40"> 20-40 <br>
+        <input type="radio" name="edad" id="40-60"> 40-60 <br>
+        <input type="radio" name="edad" id="60-100"> 60-100 <br>
+    </div>
+    <div class="inputConocer">
+        <label for="conocer">¿Cómo nos conociste?</label> <br>
+        <input type="checkbox" name="edad" id="0-20"> A través de un amigo <br>
+        <input type="checkbox" name="edad" id="20-40"> A través de un buscador <br>
+        <input type="checkbox" name="edad" id="40-60"> Navegando por la red <br>
+        <input type="checkbox" name="edad" id="60-100"> Otros <br>
+    </div>
+    <div class="opinion">
+        <label for="opinion">Opinión sobre nuestra pagina web</label><br>
+        <textarea name="opinion" id="opinion" cols="55" rows="10" placeholder="Escriba aquí su opinión..."></textarea>
+    </div>
+    <div class="sugerencias">
+        <label for="sugerencias">Tiene alguna sugerencia...</label><br>
+        <textarea name="sugerencias" id="sugerencias" cols="55" rows="10" placeholder="Escriba aquí sus sugerencias..."></textarea>
+    </div>
+    <div class="horas">
+        <label for="horas">¿Cuántas horas navegas por internet? (Señala la opción que mas se acerque)</label><br>
+        <select name="horas" id="horas">
+            <option value="2">2 horas al día</option>
+            <option value="4">4 horas al día</option>
+        </select>
+    </div>
+    <div class="enviar">
+        <button>Enviar formulario</button>
+    </div>
+    <div class="reset">
+        <input type="reset" value="Borrar formulario">
+    </div>
+</form>
+</body>
+</html>

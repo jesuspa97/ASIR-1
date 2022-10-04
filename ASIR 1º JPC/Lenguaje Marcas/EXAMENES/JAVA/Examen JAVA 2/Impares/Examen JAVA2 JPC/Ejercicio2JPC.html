@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2JPC</title>
+</head>
+<body>
+    <script>
+        function comprobar(){
+            var nombre= document.getElementById("nombre").value;
+            if (nombre.length<=0){
+                alert("Campo obligatorio NOMBRE vacío,rellénelo.")
+                document.getElementById("nombre").focus()
+            }
+
+            var apellidos= document.getElementById("apellidos").value;
+            if (apellidos.length<=0){
+                alert("Campo obligatorio APELLIDOS vacío,rellénelo.")
+                document.getElementById("apellidos").focus() 
+            }
+            else if (apellidos.indexOf(" ")==-1){
+                    alert("El  campo APELLIDOS no es correcto.")
+                    document.getElementById("apellidos").focus()
+            }
+
+            var telefono= document.getElementById("telefono").value;
+            if(telefono.length==0){
+                alert("Campo obligatorio TELÉFONO vacío,rellénelo.")
+                document.getElementById("telefono").focus()
+            }
+            else if (telefono.length !=9){
+                alert("El  campo TELÉFONO no es correcto.")
+                    document.getElementById("telefono").focus()
+            }
+
+            var email= document.getElementById("email").value;
+            if (email.length<=0){
+                alert("Campo obligatorio CORREO ELECTRÓNICO vacío,rellénelo.")
+                document.getElementById("email").focus() 
+            }
+            else if (email.indexOf("@")==-1 || email.indexOf(".")==-1){
+                    alert("El  campo CORREO ELECTRÓNICO no es correcto.")
+                    document.getElementById("email").focus()
+            }
+
+            if (!document.formsexo.sexo[0].checked && !document.formsexo.sexo[1].checked){
+                alert("Campo obligatorio SEXO vacío,rellénelo.")
+            }
+        
+            if (!document.formhabilidades.habilidades[0].checked && !document.formhabilidades.habilidades[1].checked){
+                alert("Campo obligatorio HABILIDADES vacío,rellénelo.")
+            }
+        }
+    </script>
+
+    Nombres : <input type="text" name="nombre" id="nombre"> <br><br>
+    Apellidos : <input type="text" name="apellidos" id="apellidos"> <br><br>
+    Teléfono : <input type="number" name="telefono" id="telefono"> <br><br>
+    Correo : <input type="email" name="email" id="email"> <br><br>
+
+    <form name="formsexo" id="formsexo">
+        Sexo :    Maculino: <input type="radio" name="sexo" id="sexo"> Femenino: <input type="radio" name="sexo" id="radio"><br><br>
+    </form>
+
+    <form name="formhabilidades" id="formhabilidades">
+        Habilidades :    Cantar: <input type="checkbox" name="habilidades" id="habilidades"> Tocar Guitarra: <input type="checkbox" name="habilidades" id="habilidades"><br><br>
+    </form>
+    <button onclick="comprobar()">Enviar</button>
+    <button onclick='location.reload()'>Borrar</button>
+    
+</body>
+</html>

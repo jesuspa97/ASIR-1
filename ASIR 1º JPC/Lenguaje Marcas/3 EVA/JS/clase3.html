@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej3JPC</title>
+</head>
+<body>
+    <script>
+        function sacarnumeros(){
+            min=2
+            max=7
+            var lista = [];
+            for(i=0;i<10;i++){
+                lista[i]=(Math.round(Math.random()*(max-min)+min));
+                document.write(lista[i]+"<br>");
+            }
+            document.write("<br>")
+            document.write(lista+"<br><br>")
+        var cont2=0;
+        var cont3=0;
+        var cont4=0;
+        var cont5=0;
+        var cont6=0;
+        var cont7=0;
+        resultado=[]
+        for(i=0;i<10;i++){
+            if(lista[i]==2){cont2++}
+            if(lista[i]==3){cont3++}
+            if(lista[i]==4){cont4++}
+            if(lista[i]==5){cont5++}
+            if(lista[i]==6){cont6++}
+            if(lista[i]==7){cont7++}
+        }
+        document.write("Contador 2: " + cont2 + "<br>")
+        document.write("Contador 3: " + cont3 + "<br>")
+        document.write("Contador 4: " + cont4 + "<br>")
+        document.write("Contador 5: " + cont5 + "<br>")
+        document.write("Contador 6: " + cont6 + "<br>")
+        document.write("Contador 7: " + cont7 + "<br>")
+        document.write("<br>")   
+        
+        if(cont2>cont3 && cont2>cont4 && cont2>cont5 && cont2>cont6 && cont2>cont7){
+            document.write("El número que más ha salido es el 2.")
+        }
+        else if(cont3>cont2 && cont3>cont4 && cont3>cont5 && cont3>cont6 && cont3>cont7){
+            document.write("El número que más ha salido es el 3.")
+        }
+        else if(cont4>cont2 && cont4>cont3 && cont4>cont5 && cont4>cont6 && cont4>cont7){
+            document.write("El número que más ha salido es el 4.")
+        }
+        else if(cont5>cont2 && cont5>cont3 && cont5>cont4 && cont5>cont6 && cont5>cont7){
+            document.write("El número que más ha salido es el 5.")
+        }
+        else if(cont6>cont2 && cont6>cont3 && cont6>cont4 && cont6>cont5 && cont6>cont7){
+            document.write("El número que más ha salido es el 6.")
+        }
+        else if(cont7>cont2 && cont7>cont3 && cont7>cont4 && cont7>cont5 && cont7>cont6){
+            document.write("El número que más ha salido es el 7.")
+        }
+
+        document.write("<br>")
+
+        if(cont2<cont3 && cont2<cont4 && cont2<cont5 && cont2<cont6 && cont2<cont7){
+            document.write("El número que menos ha salido es el 2.")
+        }
+        else if(cont3<cont2 && cont3<cont4 && cont3<cont5 && cont3<cont6 && cont3<cont7){
+            document.write("El número que menos ha salido es el 3.")
+        }
+        else if(cont4<cont2 && cont4<cont3 && cont4<cont5 && cont4<cont6 && cont4<cont7){
+            document.write("El número que menos ha salido es el 4.")
+        }
+        else if(cont5<cont2 && cont5<cont3 && cont5<cont4 && cont5<cont6 && cont5<cont7){
+            document.write("El número que menos ha salido es el 5.")
+        }
+        else if(cont6<cont2 && cont6<cont3 && cont6<cont4 && cont6<cont5 && cont6<cont7){
+            document.write("El número que menos ha salido es el 6.")
+        }
+        else if(cont7<cont2 && cont7<cont3 && cont7<cont4 && cont7<cont5 && cont7<cont6){
+            document.write("El número que menos ha salido es el 7.")
+        }
+
+    }
+    sacarnumeros()   
+    </script>
+    
+    
+</body>
+</html>
+<!--Hacer un programa que genere 10 números aleatorios entre 2 y 7.
+Mostrar los 10 números y mostrar el número que más veces ha aparecido y el que menos veces.-->

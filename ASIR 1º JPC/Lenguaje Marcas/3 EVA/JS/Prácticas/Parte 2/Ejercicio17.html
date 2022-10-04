@@ -1,0 +1,30 @@
+<!-- Se ingresan tres notas de un alumno, si el promedio es mayor o igual a 4
+mostrar un mensaje 'apto', sino 'suspenso'.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var x = parseFloat(prompt("Indícame tu primera nota: "))
+            var y = parseFloat(prompt("Indícame tu segunda nota: "))
+            var z = parseFloat(prompt("Indícame tu tercera nota: "))
+            var media = ((x+y+z)/3)
+            if (media>=4)
+            {
+            document.write("Apto")
+            }
+            else
+            {
+                document.write("Suspenso")
+            }  
+    </script>
+
+    
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formularios 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form {
+            color: rebeccapurple;
+        }
+        input {
+            border: 0px;
+            box-shadow: 1px 1px 5px black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*function mostrar() {
+            var email = document.form1.email.value;
+            var pass = document.form1.pass.value.length;
+            var email_plantilla = /[a-z._\d]+@[a-z._\d]+\.[a-z]{2,4}/i;
+            if (email==email_plantilla) {
+                if (pass>5) {
+                    alert("El email es: " + email);
+                    alert("La contraseña cumple con la longitud:");
+                }
+                else {
+                    alert("La contraseña tiene menos de 5 caracteres")
+                }
+            }
+            else {
+                alert("El email introducido no es correcto");
+            }
+        }*/
+
+        function mostrar() {
+
+            var passlength = document.form1.pass.value.length;
+            if (document.form1.pass.value.length=0) {
+                alert("El campo password no puede estar vacio");
+            }
+            else if (document.form1.pass.value.length<5) {
+                alert("la contraseña es demasiado corta");
+                document.form1.pass.value="";
+            }
+           
+
+        }
+
+
+        
+    </script>
+<h1>Esto es un titulo</h1>
+<form name="form1">  
+
+    <label for="user">Password:</label>
+    <input name="pass" type="password">
+    <br>
+    <input type="button" value="Enviar" onclick=mostrar()>
+    <input type="reset">
+</form>
+</body>
+</html>

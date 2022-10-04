@@ -1,0 +1,40 @@
+<!--Realizar un programa que acumule (sume) valores ingresados por teclado hasta  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+
+    <script>
+        var numero = parseInt(0);
+        var suma = parseInt(0);
+
+        while (numero!=999) {
+            numero = parseInt(prompt("Indícame un número : "));
+            if (numero==999) {
+                alert("Has llegado al máximo.");
+                break
+            }
+            else {
+                suma=suma+numero;
+            }
+        }
+        document.write("La suma total de los números es: " + suma + "<br>");
+        if (suma<0) {
+            document.write("La suma es menor a cero");
+        }
+        else if (suma==0) {
+            document.write("La suma es igual a cero");
+        }
+        else {
+            document.write("La suma es mayor a cero");
+
+        }
+    </script>
+     
+ </body>
+ </html>

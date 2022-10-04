@@ -1,0 +1,1 @@
+﻿Get-LocalUser|where LastLogon -gt 01/01/1900 

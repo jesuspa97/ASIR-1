@@ -1,0 +1,1 @@
+﻿Get-ChildItem -File -Recurse C:\Instaladores | Select Name, Length, LastWriteTime |where Length -gt 2000000000 |Sort -Property Length  

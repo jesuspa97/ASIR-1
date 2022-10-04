@@ -1,0 +1,28 @@
+<!--Confeccionar una función que reciba dos números y muestre en la página los
+valores comprendidos entre ellos de uno en uno. Cargar por teclado esos dos valores.-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <script>
+        function limite(limite1,limite2)
+            {
+                var i;
+                for (i=limite1;i<=limite2;i++)
+                {
+                    document.write(i + '->');                   
+                }
+            }
+        var limite1,limite2;
+        limite1=parseInt(prompt('Indícame un primer valor (actuará como inicio):'));
+        limite2=parseInt(prompt('Indícame un segundo valor (actuará como final) :'));
+        limite(limite1,limite2)
+    </script>
+     
+ </body>
+ </html>

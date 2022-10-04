@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reloj</title>  
+    <script>
+        function vaciar(control) {
+            control.value = "";
+        }
+    
+    </script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #d2d9e4;
+        font-family: sans-serif;
+    }
+    input {
+        margin: 10px;
+    }
+</style>
+<body>
+<input type="text" name="nombre" id="nombre" onfocus="vaciar(this)" placeholder="usuario"> <br>
+<input type="text" name="nombre" id="nombre" onfocus="vaciar(this)" placeholder="password">
+</body>
+</html>

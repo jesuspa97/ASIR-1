@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1JPC</title>
+</head>
+<body>
+    <script>
+        function calcularIMC(){
+            var altura=document.getElementById("altura").value;
+            //alert(altura)
+            var peso=document.getElementById("peso").value;
+            //alert(peso)
+            var IMC=peso/(altura*altura)
+            if (IMC<16){
+                alert("Delgadez")
+            }
+            else if(IMC>16 && IMC<24.99){
+                alert("Peso Normal")
+            }
+            else if(IMC>25 && IMC<29.99){
+                alert("Sobrepeso")
+            }
+            else{alert("Obeso: Tipo 1")}
+        }
+    </script>
+
+Escribe tu Altura actual(m) :  
+<input type="number" name="altura" id="altura"><br>
+Escribe tu PESO actual(kg) :  
+<input type="number" name="peso" id="peso"> <br>
+<button onclick="calcularIMC()">Calcular IMC</button>
+    
+</body>
+</html>

@@ -1,0 +1,6 @@
+numero1=float(input(f"Dime el primer número: "))
+numero2=float(input("Dime el segundo número"))
+print(numero1+numero2)
+print(numero1-numero2)
+print(numero1*numero2)
+print(numero1/numero2)

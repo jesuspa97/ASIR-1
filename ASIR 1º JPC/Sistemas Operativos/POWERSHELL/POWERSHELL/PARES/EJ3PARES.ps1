@@ -1,0 +1,19 @@
+﻿Get-ChildItem -File |sort -Descending length |select -First 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

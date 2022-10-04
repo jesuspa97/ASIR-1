@@ -1,0 +1,23 @@
+<!--Elaborar una función a la cual le envíe el valor del lado de un cuadrado y me retorne su perímetro. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <script>
+       function perimetro (lado)
+       {
+           perim=lado+lado+lado+lado
+           return perim
+       }
+       var lado=parseInt(prompt('Indícame la longitud de el lado : '));
+       var perim=0;
+       document.write(perimetro(lado))
+    </script>
+     
+ </body>
+ </html>

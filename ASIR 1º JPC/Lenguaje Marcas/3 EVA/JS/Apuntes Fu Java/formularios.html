@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formularios 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form {
+            color: rebeccapurple;
+        }
+        input {
+            border: 0px;
+            box-shadow: 1px 1px 5px black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function mostrar() {
+            var user = document.form1.user.value;
+            var email = document.form1.email.value;
+            var email_plantilla = /[a-z._\d]+@[a-z._\d]+\.[a-z]{2,4}/i; //no hemos dado esto
+            if (email==email_plantilla) {
+                alert("El nombre de usuario es: " + user);
+                alert("El email es: " + email);
+            }
+            else {
+                alert("El email introducido no es correcto");
+            }
+        }
+    </script>
+<h1>Esto es un titulo</h1>
+<form name="form1">
+    <label for="user">Nombre de usuario:</label>
+    <input name="user" type="text">
+    <br>
+    <label for="email">Email</label>
+    <input name="email" type="email">
+    <br>
+    <input type="button" value="Enviar" onclick=mostrar()>
+    <input type="reset">
+</form>
+</body>
+</html>

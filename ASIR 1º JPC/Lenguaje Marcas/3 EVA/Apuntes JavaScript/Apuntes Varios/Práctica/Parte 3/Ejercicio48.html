@@ -1,0 +1,41 @@
+<!--Escribir un programa que solicite la carga de un número entre 0 y 999, y nos
+muestre un mensaje de cuántos dígitos tiene el mismo. Finalizar el programa cuando se
+cargue el valor 0.
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <script>
+        var numero;
+        while(numero!=0){
+        numero=parseInt(prompt("Indícame un número : "))
+        
+           if(numero<10)
+           {
+               alert("El número tiene 1 cifra")
+           }
+           else if(numero<100)
+           {
+               alert("El número tiene 2 cifras")
+           }
+           else if(numero<=999)
+           {
+               alert("El número tiene 3 cifras")
+           }
+           else
+           {
+               alert("El número no está dentro del rango indicado.")
+           }
+       }
+
+
+    </script>
+     
+ </body>
+ </html>

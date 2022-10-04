@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formularios 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form {
+            color: rgba(0, 0, 0, 0.795);
+        }
+        input {
+            border: 0px;
+            box-shadow: 1px 1px 5px black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        function contarSeleccionados() {
+            var cant = 0;
+            if (document.form1.Lenguaje1.checked) {
+                cant++;
+            }
+            if (document.form1.Lenguaje2.checked) {
+                cant++;
+            }
+            if (document.form1.Lenguaje3.checked) {
+                cant++;
+            }
+            if (document.form1.Lenguaje4.checked) {
+                cant++;
+            }
+            alert("Conoce " + cant + " lenguajes");
+        }
+        
+    </script>
+<h1>Recuento lenguajes</h1>
+<form name="form1">  
+
+    <label for="user">Seleccione los lenguajes que conoce:</label><br>
+
+    <input type="checkbox" name="Lenguaje1">JavaScript <br>
+    <input type="checkbox" name="Lenguaje2">PHP<br>
+    <input type="checkbox" name="Lenguaje3">Python<br>
+    <input type="checkbox" name="Lenguaje4">Oracle<br>
+
+    <input type="button" value="Recuento" onclick=contarSeleccionados()>
+
+        
+    </form>
+</body>
+</html>

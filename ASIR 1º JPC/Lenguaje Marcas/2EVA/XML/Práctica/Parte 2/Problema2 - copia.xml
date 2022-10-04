@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ListaFacturas[
+<!ELEMENT ListaFacturas (Factura+)>
+
+<!ELEMENT Factura (Emisor, Pagador, Importe)>
+<!ATTLIST Factura Fecha CDATA #IMPLIED>
+
+<!ELEMENT Emisor (Nombre, Volumenventas?)>
+<!ATTLIST Emisor CIF CDATA #REQUIRED>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Volumenventas (#PCDATA)>
+
+<!ELEMENT Pagador (Nombre, Volumenventas?)>
+<!ATTLIST Pagador CIF CDATA #REQUIRED>
+
+<!ELEMENT Importe (#PCDATA)>
+]>
+
+
+
+<ListaFacturas>
+    <Factura Fecha="10-12-2021">
+
+      <Emisor CIF="50000000X">
+          <Nombre>Luuk De Tronc</Nombre>
+          <Volumenventas>1.000.000€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="50078901V">
+          <Nombre>Juan Lapuerta</Nombre>
+          <Volumenventas>15.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>16.000.000€</Importe>
+    </Factura>
+
+    <Factura Fecha="10-12-2021">
+
+      <Emisor CIF="44440000X">
+          <Nombre>Vinicius Jr.</Nombre>
+          <Volumenventas>0.000.000€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="55555001Z">
+          <Nombre>Tito Floren</Nombre>
+          <Volumenventas>35.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>35.000.000€</Importe>
+    </Factura>
+
+    <Factura Fecha="10-12-2021">
+
+      <Emisor CIF="60000000X">
+          <Nombre>Marco Ausencio</Nombre>
+          <Volumenventas>15.500.000€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="60055001A">
+          <Nombre>Caerla Juárez</Nombre>
+          <Volumenventas>5.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>20.500.000€</Importe>
+    </Factura>
+
+    <Factura Fecha="10-12-2021">
+
+      <Emisor CIF="60000000X">
+          <Nombre>Alfredo Duro</Nombre>
+          <Volumenventas>Gratis = 0€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="60055001A">
+          <Nombre>Josep Pedrerol</Nombre>
+          <Volumenventas>1.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>1.000.000€</Importe>
+    </Factura>
+</ListaFacturas>
+--------------------------------
+
+<!ELEMENT ListaFacturas (Factura+)>
+
+<!ELEMENT Factura (Emisor, Pagador, Importe)>
+<!ATTLIST Factura Fecha CDATA #IMPLIED>
+
+<!ELEMENT Emisor (Nombre, Volumenventas?)>
+<!ATTLIST Emisor CIF CDATA #REQUIRED>
+<!ELEMENT Nombre (#PCDATA)> -->SE PUEDE REPETIR?????????????
+<!ELEMENT Volumenventas (#PCDATA)>-->SE PUEDE REPETIR?????????????
+
+<!ELEMENT Pagador (Nombre, Volumenventas?)>
+<!ATTLIST Pagador CIF CDATA #REQUIRED>
+<!ELEMENT Nombre (#PCDATA)> -->SE PUEDE REPETIR?????????????
+<!ELEMENT Volumenventas (#PCDATA)>-->SE PUEDE REPETIR?????????????
+
+<!ELEMENT Importe (#PCDATA)>
+
+-------------------------------------------------------
+
+NO SE PUEDEN REPETIR ELEMENTOS en el DTD 
+
+<!ELEMENT ListaFacturas (Factura+)>
+
+<!ELEMENT Factura (Emisor, Pagador, Importe)>
+<!ATTLIST Factura Fecha CDATA #IMPLIED>
+
+<!ELEMENT Emisor (Nombre, Volumenventas?)>
+<!ATTLIST Emisor CIF CDATA #REQUIRED>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Volumenventas (#PCDATA)>
+
+<!ELEMENT Pagador (Nombre, Volumenventas?)>
+<!ATTLIST Pagador CIF CDATA #REQUIRED>
+
+<!ELEMENT Importe (#PCDATA)>

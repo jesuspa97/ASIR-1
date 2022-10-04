@@ -1,0 +1,17 @@
+Ejercicios:
+
+1.-Obtener los ID’s de los usuarios. Dentro del campo hay 2 partes. Separalas.
+2.-Obtener Longitud de los nombres de los usuarios
+3.-Imprimir 'Usuario' seguido del nombre del usuario
+4.-Devolver la letra inicial mas la letra final y longitud del nombre de los usuarios.
+5.-Localizar la posición donde existe el primer espacio en el campo nombre
+6.-Imprimir Sra. o Sr. según sea el caso, seguido del nombre del alumno
+7.-Escribir en Mayusculas todos los emails.
+8.-Escribir Solo la primera letra del nombre en Mayuscula y el resto es minusculas.
+9.- Aumentar en saldo en 100 a todos los usuarios que sean de 'yahoo'.
+10.-Borrar los usuarios que su movil acabe en '65'
+11.-Mostrar cuantas veces aparece el nombre "María".
+12.- Muestra el Número de hombres y el número de mujeres. Puedes usar 2 select.
+13.-Muestra agrupado por compañia, cuantos hay de cada uno y la media del salfo que tienen.
+14.-Muestra cuantos usuarios hay de cada dominio de internet.
+	Quiero saber todos los que hay de yahoo,live,...

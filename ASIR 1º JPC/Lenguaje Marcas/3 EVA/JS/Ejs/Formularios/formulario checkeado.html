@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mostrarSeleccionados()
+        {
+            if(document.form1.estudios[0].checked)
+            alert("No tienes estudios");
+            if(document.form1.estudios[1].checked)
+            alert("Tienes estudios Primarios");
+            if(document.form1.estudios[2].checked)
+            alert("Tienes estudios Secundarios");
+            if(document.form1.estudios[3].checked)
+            alert("Tienes estudios Universitarios");
+        }
+    </script>
+    <form name="form1">
+        <input type="radio" name="estudios" value="sin estudios">Sin estudios<br>
+        <input type="radio" name="estudios">Primarios<br>
+        <input type="radio" name="estudios">Secundarios<br>
+        <input type="radio" name="estudios">Universitarios<br>
+        <input type="button" value="Mostrar" onclick="mostrarSeleccionados()">
+    </form>
+</body>
+</html>

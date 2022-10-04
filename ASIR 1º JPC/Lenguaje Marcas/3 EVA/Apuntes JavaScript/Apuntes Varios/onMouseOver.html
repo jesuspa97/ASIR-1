@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reloj</title>  
+    <script>
+        function pintar(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #d2d9e4;
+        font-family: sans-serif;
+    }
+    p {
+        margin: 10px;
+    }
+
+</style>
+<body>
+<p onmouseover="pintar('#00ff00')" onmouseout="pintar('white')">Verde</p>
+<p onmouseover="pintar('red')" onmouseout="pintar('white')">Rojo</p>
+<p onmouseover="pintar('blue')" onmouseout="pintar('white')">Azul</p>
+<a href="" onmouseover="pintar('green')" onmouseout="pintar('white')">Verde </a>
+<a href="" onmouseover="pintar('blue')" onmouseout="pintar('white')">Azul </a>
+<a href="" onmouseover="pintar('red')" onmouseout="pintar('white')">Rojo </a>
+
+</body>
+</html>

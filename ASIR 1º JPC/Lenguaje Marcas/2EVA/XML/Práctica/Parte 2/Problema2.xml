@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ListaFacturas[
+<!ELEMENT ListaFacturas (Factura*)>
+<!ELEMENT Factura (Emisor, Pagador, Importe)>
+<!ATTLIST Factura Fecha CDATA #IMPLIED>
+<!ELEMENT Emisor (Nombre, Volumenventas?)>
+<!ATTLIST Emisor CIF CDATA #REQUIRED>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Volumenventas (#PCDATA)>
+<!ELEMENT Pagador (Nombre, Volumenventas?)>
+<!ATTLIST Pagador CIF CDATA #REQUIRED>
+<!ELEMENT Importe (#PCDATA)>
+]>
+
+<ListaFacturas>
+    <Factura Fecha="11-12-2021">
+
+      <Emisor CIF="40076860X">
+          <Nombre>Luuk De Tronc</Nombre>
+          <Volumenventas>1.000.000€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="50078901V">
+          <Nombre>Juan Lapuerta</Nombre>
+          <Volumenventas>15.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>16.000.000€</Importe>
+    </Factura>
+
+    <Factura Fecha="20-6-2018">
+
+      <Emisor CIF="44442398F">
+          <Nombre>Vinicius Jr.</Nombre>
+          <Volumenventas>0.000.000€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="55667781Z">
+          <Nombre>Tito Floren</Nombre>
+          <Volumenventas>35.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>35.000.000€</Importe>
+    </Factura>
+
+    <Factura Fecha="10-12-2021">
+
+      <Emisor CIF="605868532T">
+          <Nombre>Marco Ausencio</Nombre>
+          <Volumenventas>15.500.000€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="69555001G">
+          <Nombre>Caerla Juárez</Nombre>
+          <Volumenventas>5.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>20.500.000€</Importe>
+    </Factura>
+
+    <Factura Fecha="10-12-2021">
+
+      <Emisor CIF="78520000P">
+          <Nombre>Alfredo Duro</Nombre>
+          <Volumenventas>Gratis = 0€</Volumenventas>
+      </Emisor>
+
+      <Pagador CIF="61055021A">
+          <Nombre>Josep Pedrerol</Nombre>
+          <Volumenventas>1.000.000€</Volumenventas>
+      </Pagador>
+
+      <Importe>1.000.000€</Importe>
+    </Factura>
+</ListaFacturas>

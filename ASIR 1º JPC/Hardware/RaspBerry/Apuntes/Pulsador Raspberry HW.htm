@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7" lang="es"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7" lang="es"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8" lang="es"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9" lang="es"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!--> <html lang="es"> <!--<![endif]-->
+<head>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/744c00c8e823a62b0a2461541/f1d6d6709defc32d75b64a6d1.js");</script>
+
+<meta charset="UTF-8" />
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' /><meta name="author" content="designthemes"/>
+<title>Condicionales y pulsadores | Tienda y Tutoriales Arduino</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A700%7CPT%20Sans%3A400%2C700%27%20rel%3D%27stylesheet%27%20type%3D%27text%2Fcss%7CDosis%3A300%2C400%2C400italic%2C700%7CIstok%20Web%3A300%2C400%2C400italic%2C700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A700%7CPT%20Sans%3A400%2C700%27%20rel%3D%27stylesheet%27%20type%3D%27text%2Fcss%7CDosis%3A300%2C400%2C400italic%2C700%7CIstok%20Web%3A300%2C400%2C400italic%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A700%7CPT%20Sans%3A400%2C700%27%20rel%3D%27stylesheet%27%20type%3D%27text%2Fcss%7CDosis%3A300%2C400%2C400italic%2C700%7CIstok%20Web%3A300%2C400%2C400italic%2C700&#038;display=swap" /></noscript>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.prometec.net/feed/" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://www.prometec.net/xmlrpc.php" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://use.fontawesome.com/4f4f1ba16e.js"></script>
+<link rel='shortcut icon' href='https://www.prometec.net/wp-content/themes/myempire/favicon.ico' type='image/x-icon' /><meta name='robots' content='max-image-preview:large' />
+<meta name='description' content='curso python con raspberry' />	<meta name='keywords' content='python, raspberry'/>
+<!-- All in One SEO Pack Pro 3.3.5 by Michael Torbert of Semper Fi Web Designob_start_detected [-1,-1] -->
+<!-- Cadena de depuración: 3SHPJL5R8LZFGOXXBR7DN/V9K2W -->
+<meta name="description"  content="Muestra como leer un pulsador en raspberry pi" />
+
+<script type="application/ld+json" class="aioseop-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.prometec.net/#organization","url":"https://www.prometec.net/","name":"Tienda y Tutoriales Arduino","sameAs":[]},{"@type":"WebSite","@id":"https://www.prometec.net/#website","url":"https://www.prometec.net/","name":"Tienda y Tutoriales Arduino","publisher":{"@id":"https://www.prometec.net/#organization"}},{"@type":"WebPage","@id":"https://www.prometec.net/condicionales-y-pulsadores/#webpage","url":"https://www.prometec.net/condicionales-y-pulsadores/","inLanguage":"es","name":"Condicionales y pulsadores","isPartOf":{"@id":"https://www.prometec.net/#website"},"datePublished":"2016-12-13T16:42:34+01:00","dateModified":"2022-03-06T19:47:18+01:00","description":"Muestra como leer un pulsador en raspberry pi"}]}</script>
+<link rel="canonical" href="https://www.prometec.net/condicionales-y-pulsadores/" />
+<!-- All in One SEO Pack Pro -->
+<link rel="amphtml" href="https://www.prometec.net/condicionales-y-pulsadores/amp/" /><meta name="generator" content="AMP for WP 1.0.77.38"/><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Tienda y Tutoriales Arduino &raquo; Feed" href="https://www.prometec.net/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tienda y Tutoriales Arduino &raquo; Feed de los comentarios" href="https://www.prometec.net/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tienda y Tutoriales Arduino &raquo; Comentario Condicionales y pulsadores del feed" href="https://www.prometec.net/condicionales-y-pulsadores/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='default-css'  href='https://www.prometec.net/wp-content/themes/myempire/style.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.prometec.net/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.prometec.net/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='pmpro_frontend-css'  href='https://www.prometec.net/wp-content/plugins/paid-memberships-pro/css/frontend.css?ver=2.7.5' type='text/css' media='screen' />
+<link rel='stylesheet' id='pmpro_print-css'  href='https://www.prometec.net/wp-content/plugins/paid-memberships-pro/css/print.css?ver=2.7.5' type='text/css' media='print' />
+<link rel='stylesheet' id='pciwgas-publlic-style-css'  href='https://www.prometec.net/wp-content/plugins/post-category-image-with-grid-and-slider/assets/css/categoryimage-public.css?ver=1.4.5' type='text/css' media='all' />
+
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='style.ie9down-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/ie9-and-down.css?ver=5.9.3' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='style.ie8down-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/ie8-and-down.css?ver=5.9.3' type='text/css' media='all' />
+<![endif]-->
+<!--[if IE 7]>
+<link rel='stylesheet' id='style.ie7-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/ie7.css?ver=5.9.3' type='text/css' media='all' />
+<![endif]-->
+<!--[if IE 7]>
+<link rel='stylesheet' id='style.fontie7-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/font-awesome-ie7.min.css?ver=5.9.3' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='style.fontawesome-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/font-awesome.min.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='skin-css'  href='https://www.prometec.net/wp-content/themes/myempire/skins/chocolate/style.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='shortcodes-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/shortcodes.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='prettyphoto-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/prettyPhoto.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='isotope-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/isotope.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css'  href='https://www.prometec.net/wp-content/themes/myempire/css/responsive.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='rpt-css'  href='https://www.prometec.net/wp-content/plugins/responsive-pricing-table-pro/inc/css/rpt_style.min.css?ver=5.9.3' type='text/css' media='all' />
+
+<!--[if lt IE 9]>
+	<style type="text/css">
+		.button-arrow .icon-angle-right, .post-author-details, .image-overlay, .portfolio-thumb .image-overlay a span, .post-thumb .thick-border, .blog-post .post-thumb a, .blog-post .post-thumb a img, .button, .carousel-arrows .icon-chevron-right, .carousel-arrows .icon-chevron-left, .blog-post .post-thumb .entry-date, .pagination ul li a, .pagination ul li.active-page, .widget_tag_cloud a, .post-date, .post-date span:after, .post-date span:before, .sorting-container li:first-child a.active:before, .sorting-container li:first-child:hover a:before, .sorting-container li:first-child a, .intro-text.type3 .button, .error-box, .warning-box, .success-box, .info-box, .portfolio-container li h4.title a, .team .social-icons li {
+			behavior: url(https://www.prometec.net/wp-content/themes/myempire/PIE.php);
+		}
+     </style>
+	<![endif]-->
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/modernizr-2.6.2.min.js?ver=5.9.3' id='script-modernizr-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/plugins/responsive-pricing-table-pro/inc/js/rptp.min.js?ver=5.9.3' id='rpt-js'></script>
+<style type="text/css">	nav#page-nav ul li a, .mobile-menu { font-family:Dosis,sans-serif; }	body { font-family:Istok Web , sans-serif; }	H1{ font-family:Dosis; }	H2{ font-family:Dosis; }	H3{ font-family:Dosis; }	H4{ font-family:Dosis; }	H5{ font-family:Dosis; }	H6{ font-family:Dosis; }	div#bbar-body{   }  .accesos {
+   background-color:#009999;
+}
+.cta-home {
+   width:100%;
+background: url('/wp-content/uploads/2017/01/cta-home-prometec.png') center center no-repeat;
+}
+.ls-wp-fullwidth-container {
+   margin-top:-40px;
+}
+.cuatro-col .one-fourth {
+   width:25%;
+}
+.cuatro-col .column {
+   margin-right:0;
+   padding:23px;
+}
+.titulo-educacion {
+width:100% !important;
+}
+.titulo-secundaria{
+width:100% !important;
+background-color:#6699CC  !important;
+}
+
+.home-page .blog-post {
+    float: none;
+    display: inline-block;
+    width: 33%;
+    vertical-align: top;
+}
+
+@media only screen and (min-width: 1200px){
+.container {
+    width: 1024px !important;
+}
+}
+
+@media only screen and (min-width: 992px){
+.container {
+    width: 970px !important;
+}
+}
+
+@media only screen and (max-width: 991px){
+.container {
+    width: 100% !important;
+}
+.home-page .blog-post {
+    width: 50%;
+}
+}
+
+@media only screen and (max-width: 610px){
+.container {
+    width: 100% !important;
+}
+.home-page .blog-post {
+    width: 100%;
+}
+}
+
+@media only screen and (max-width: 700px){
+.cuatro-col .one-fourth {
+    width: 100%;
+}
+footer .one-fourth {
+    min-height: 0px;
+}
+#logo {
+    height: auto;
+}
+h1.ls-l, h2.ls-l {
+    left: 0px !important;
+}
+}
+.search-frm {width:100%;}
+
+.buscador {
+   background: url('/wp-content/uploads/2017/01/buscador-home.jpg') center center no-repeat;
+
+}
+
+#searchform input[type="submit"], .button, .wpcf7-form-control.wpcf7-submit {
+    border-radius:0 !important;
+    transition: none;
+    display: inline-block;
+    text-transform: inherit;
+    font-weight: normal;
+    font-family: 'Oswald' !important;
+    text-shadow: none !important;
+    font-size: 20px !important;
+}
+.input-buscar {
+width:300px;
+position:relative;
+float:none !important;
+margin-left:0 !important;
+}
+.intro-text.type3 {
+    float: none !important;
+width:100%;
+}
+.products .product .column {
+    position: inherit;
+}</style><link rel="https://api.w.org/" href="https://www.prometec.net/wp-json/" /><link rel="alternate" type="application/json" href="https://www.prometec.net/wp-json/wp/v2/pages/17015" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.prometec.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.prometec.net/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.3" />
+<link rel='shortlink' href='https://www.prometec.net/?p=17015' />
+<link rel="alternate" type="application/json+oembed" href="https://www.prometec.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.prometec.net%2Fcondicionales-y-pulsadores%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.prometec.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.prometec.net%2Fcondicionales-y-pulsadores%2F&#038;format=xml" />
+<!-- / HREFLANG Tags by DCGWS Version 2.0.0 -->
+<!-- / HREFLANG Tags by DCGWS -->
+		<style type="text/css" id="wp-custom-css">
+			/*
+Puedes añadir tu propio CSS aquí.
+
+Haz clic en el icono de ayuda de arriba para averiguar más.
+*/
+
+.fondo-nubes .main-container {
+    background-image: url(/wp-content/uploads/2018/05/fondo-nubes.jpg) !important;
+}
+
+
+		</style>
+		
+<script type='text/javascript' src='https://www.prometec.net/wp-content/plugins/wp-spamshield/js/jscripts.php'></script> 
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body data-rsssl=1 class="page-template-default page page-id-17015 pmpro-body-has-access">
+
+	
+	<div id="bbar-wrapper" style='background:#333333;'>
+		<div id="bbar-body" style='display:block;' >
+        	<div class="container">
+				            </div>
+            <div id="bbar-close"><img src="https://www.prometec.net/wp-content/themes/myempire/images/bbar/close-bar.png" alt="bclose" title="" /> </div>            
+		</div>
+		<div id="bbar-open" style='display:none;'><img src="https://www.prometec.net/wp-content/themes/myempire/images/bbar/open-bar.png" alt="bopen" /> </div>
+	</div>
+<!--[ wrapper div starts ]-->
+<div id="wrapper">
+	<div class="main-container"> 
+		<!--[ page header starts ]-->
+        <div id="header-wrapper">
+            <header class="gradient">
+                <div class="container">
+                                                <a id="logo" href="https://www.prometec.net" title="Tienda y Tutoriales Arduino"><img src="https://www.prometec.net/wp-content/uploads/2014/10/logoprometec.png" alt="Tienda y Tutoriales Arduino" title="Tienda y Tutoriales Arduino" /></a>                           
+                                        <nav id="page-nav"><ul id="main-menu" class="menu"><li id="menu-item-57901" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-57901"><a href="https://store.prometec.net">Tiendas</a>
+<ul class="sub-menu">
+	<li id="menu-item-57899" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-57899"><a href="https://store.prometec.net?utm_source=blog&#038;utm_medium=menu&#038;utm_campaign=tienda">España</a></li>
+	<li id="menu-item-57900" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-57900"><a href="https://prometec.mx?utm_source=blog&#038;utm_medium=menu&#038;utm_campaign=tienda">México</a></li>
+	<li id="menu-item-38697" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38697"><a href="https://www.prometec.net/condiciones-generales/">Condiciones Generales</a></li>
+</ul>
+</li>
+<li id="menu-item-1533" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1533"><a href="https://www.prometec.net/indice-tutoriales">Arduino</a>
+<ul class="sub-menu">
+	<li id="menu-item-10650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10650"><a href="https://www.prometec.net/scratch/">Scratch</a></li>
+	<li id="menu-item-18722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18722"><a href="https://www.prometec.net/mblock/">mBlock: robótica infantil</a></li>
+	<li id="menu-item-1653" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1653"><a href="https://www.prometec.net/modulo-1/">Primeros pasos en Arduino</a></li>
+	<li id="menu-item-1746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a href="https://www.prometec.net/actuadores-y-sensores/">Actuadores y Sensores.</a></li>
+	<li id="menu-item-5458" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5458"><a href="https://www.prometec.net/displays/">Arduino Displays</a></li>
+	<li id="menu-item-3552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3552"><a href="https://www.prometec.net/herramientas/">Herramientas avanzadas</a></li>
+	<li id="menu-item-7473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7473"><a href="https://www.prometec.net/programacion-oop/">Programacion OOP</a></li>
+	<li id="menu-item-4133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4133"><a href="https://www.prometec.net/comunicaciones/">Comunicaciones</a></li>
+	<li id="menu-item-4812" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4812"><a href="https://www.prometec.net/electronica/">Electrónica</a></li>
+	<li id="menu-item-5733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5733"><a href="https://www.prometec.net/motores/">Motores &#038; Robots</a></li>
+	<li id="menu-item-13004" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13004"><a href="https://www.prometec.net/musica-sonido/">Música &#038; Sonido</a></li>
+	<li id="menu-item-22591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22591"><a href="https://www.prometec.net/proyectos/">Proyectos</a></li>
+</ul>
+</li>
+<li id="menu-item-13049" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13049"><a href="https://www.prometec.net/indice-raspberry-pi/">Raspberry Pi</a></li>
+<li id="menu-item-8239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8239"><a href="https://www.prometec.net/contact/">Contacto Prometec</a></li>
+<li id="menu-item-58063" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-58063"><a href="https://www.prometec.net/cuenta-de-membresia/tipos-de-suscripcion/">Suscripciones</a>
+<ul class="sub-menu">
+	<li id="menu-item-58084" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58084"><a href="https://www.prometec.net/cuenta-de-membresia/tipos-de-suscripcion/">Tipos de Suscripción</a></li>
+	<li id="menu-item-58064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58064"><a href="https://www.prometec.net/cuenta-de-membresia/">Cuenta de membresía</a></li>
+	<li id="menu-item-58065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58065"><a href="https://www.prometec.net/cuenta-de-membresia/factura-de-membresia/">Factura de membresía</a></li>
+	<li id="menu-item-58066" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58066"><a href="https://www.prometec.net/cuenta-de-membresia/confirmacion-de-membresia/">Confirmación de membresía</a></li>
+	<li id="menu-item-58067" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58067"><a href="https://www.prometec.net/cuenta-de-membresia/pago-de-membresia/">Pago de membresía</a></li>
+	<li id="menu-item-58068" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58068"><a href="https://www.prometec.net/cuenta-de-membresia/cancelacion-de-membresia/">Cancelación de membresía</a></li>
+	<li id="menu-item-58069" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58069"><a href="https://www.prometec.net/cuenta-de-membresia/facturacion-de-membresia/">Facturación de membresía</a></li>
+</ul>
+</li>
+</ul></nav>
+                </div>
+          </header>
+		</div>          
+		<!--[ page header ends ]-->
+	  		  <div class="intro page-heading gradient">
+			  <div class="container">
+				  <h1>Condicionales y pulsadores</h1><h6>O de como leer un pulsadortiene mas complicación de lo que parece</h6>			  </div>
+		  </div>
+		      
+	  	  <div class="margin clear-40"></div>
+	  
+	  <div class="content"> 
+		  <div class="container">
+		  
+		  		  
+			  <div id="primary" class="content-full-width">
+              	<article id="post-17015" class="post-17015 page type-page status-publish hentry pmpro-has-access"><div class='intro-text type3 '><h4>Condicionales y pulsadores</h4>
+<p><span style="line-height: 1.5;"></div></span><div  class='column one-fourth  '> </div><div  class='column three-fourth  last'><div class="margin clear-5"></div>
+<p>&nbsp;</p>
+<ul class="fancy-list star">
+<li style="list-style-type: none;">
+<ul class="fancy-list star">
+<li>Veremos un sencillo pulsador de entrada y sus caracteristicas.</li>
+<li>Presentaremos los circuitos Pull up y Pull down y porque son necesarios.</li>
+<li>Mostraremos como leer una entrada digital GPIO de la Raspberry Pi.</li>
+<li>Presentaremos el Cobbler.</li>
+<li>Escribiremos un programa sencillo que lea el estado de un pulsador desde nuestra Raspberry. </div> <div class='clear'></div><span style="line-height: 1.5;"><div class="margin clear-5"></div></span></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<div class='intro-text type3 '><h4> Material requerido.</h4></div>
+<table>
+<tbody>
+<tr>
+<td width="215"><img class="aligncenter size-full wp-image-14633" src="https://www.prometec.net/wp-content/uploads/2016/08/raspberrypi3.jpg" alt="Vista mayor" width="640" height="420" srcset="https://www.prometec.net/wp-content/uploads/2016/08/raspberrypi3.jpg 640w, https://www.prometec.net/wp-content/uploads/2016/08/raspberrypi3-300x197.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /></td>
+<td style="text-align: left;" width="361"><strong><a href="https://www.prometec.net/producto/raspberry-pi-3-model-b/">Raspberry Pi 3</a> o equivalente</strong></td>
+</tr>
+<tr>
+<td width="215"><a href="https://www.prometec.net/wp-content/uploads/2014/09/Img_3_4.png"><img loading="lazy" class="aligncenter wp-image-1454" src="https://www.prometec.net/wp-content/uploads/2014/09/Img_3_4.png" alt="Img_3_4" width="103" height="72" /></a></td>
+<td style="text-align: left;" width="361">Una <strong><a href="https://www.prometec.net/producto/protoboard-830/">Protoboard</a></strong>.</td>
+</tr>
+<tr>
+<td width="215"><a href="https://www.prometec.net/wp-content/uploads/2014/09/RedLed_.jpg"><img loading="lazy" class="aligncenter wp-image-2326" src="https://www.prometec.net/wp-content/uploads/2014/09/RedLed_.jpg" alt="componente" width="88" height="81" /></a></td>
+<td style="text-align: left;" width="361">Un <strong><a href="https://www.prometec.net/producto/leds-de-colores-variados/">diodo LED</a>.</strong></td>
+</tr>
+<tr>
+<td width="215"><a href="https://www.prometec.net/wp-content/uploads/2014/09/Img_5_1.png"><img loading="lazy" class="aligncenter wp-image-1498" src="https://www.prometec.net/wp-content/uploads/2014/09/Img_5_1.png" alt="Img_5_1" width="95" height="95" srcset="https://www.prometec.net/wp-content/uploads/2014/09/Img_5_1.png 225w, https://www.prometec.net/wp-content/uploads/2014/09/Img_5_1-150x150.png 150w, https://www.prometec.net/wp-content/uploads/2014/09/Img_5_1-210x210.png 210w, https://www.prometec.net/wp-content/uploads/2014/09/Img_5_1-70x70.png 70w" sizes="(max-width: 95px) 100vw, 95px" /></a></td>
+<td style="text-align: left;" width="361"> Un <strong><a href="https://www.prometec.net/producto/kit-5-pulsadores/">pulsador</a></strong>.</td>
+</tr>
+<tr>
+<td width="215"><a href="https://www.prometec.net/wp-content/uploads/2014/09/Img_3_6.png"><img loading="lazy" class="aligncenter wp-image-1456" src="https://www.prometec.net/wp-content/uploads/2014/09/Img_3_6-300x185.png" alt="Img_3_6" width="136" height="84" /></a></td>
+<td style="text-align: left;" width="361">Algunos <a href="https://www.prometec.net/producto/cables-dupont-macho-macho/"><strong>cables</strong> </a>de Protoboard..</td>
+</tr>
+</tbody>
+</table>
+<div class='intro-text type3 '><h4>Raspberry Pi y los pulsadores.</h4></div>
+<p>&nbsp;</p>
+<p>En capítulos previos hemos visto cómo usar los <strong>GPIO</strong> de nuestras <strong>Raspberry Pi</strong> para activar señales digitales al exterior, como por ejemplo encender o apagar un LED. Es decir hemos visto cómo usar los GPIO como puertas de salida digitales.</p>
+<p>En este capítulo vamos ver cómo usar los <strong>GPIO</strong> para leer señales digitales del exterior, es decir usarlas como <strong>entradas digitales</strong>, y para ello nada mejor que ver cómo podemos hacer para leer un humilde <strong>pulsador</strong> digital.</p>
+<p>Estos pulsadores son de lo más sencillos y simplemente pueden adoptar dos estados posibles abiertos cuando no están pulsados y cerrados cuando lo están.</p>
+<p>Aparentemente nada hay más inocente que un pulsador, pero pronto iréis viendo que estos componentes son diabólicos y consiguen marearte con una facilidad que suele sorprender a los novicios despistados. Pero hacedme caso. La capacidad de un humilde pulsador para generarte dolores de cabeza es proverbial.</p>
+<p>Aunque parecen componentes inocentes, pueden marearte de mil formas distintas y por eso procuraremos ir viendo paso a paso alguno de los problemas típicos que aparecen y también las soluciones clásicas para evitar discos problemas</p>
+<p>Esta sesión va, pues, de cómo leer señales del exterior y de paso como vamos a usar un pulsador para generar esas señales a leer, ver cómo usarlos con un mínimo de problemas.</p>
+<p>&nbsp;</p>
+<div class='intro-text type3 '><h4>Hablemos de pulsadores</h4></div>
+<p>&nbsp;</p>
+<p>Cuando un pulsador se activa, lo normal es que cierre un circuito y si el otro extremos está conectado a digamos tensión, leemos ese valor, y consideramos un HIGH en la lectura.</p>
+<img loading="lazy" class="aligncenter size-full wp-image-17016" src="https://www.prometec.net/wp-content/uploads/2016/12/pushbutton.jpg" alt="Esquema de pulsador" width="389" height="230" srcset="https://www.prometec.net/wp-content/uploads/2016/12/pushbutton.jpg 389w, https://www.prometec.net/wp-content/uploads/2016/12/pushbutton-300x177.jpg 300w" sizes="(max-width: 389px) 100vw, 389px" />
+<p>Muchos de estos pulsadores que podemos encontrar en el mercado disponen de un par de contactos unidos internamente, como en la imagen que os pongo arriba. Al pulsar el contacto el circuito se cierra y con nuestra <strong>Raspberry</strong> podemos leer el valor que hay en RPI, para reconocer que el botón ha sido activado. Tenemos una medida clara de tensión alta o Vcc.</p>
+<p>Hasta aquí no hay problema, pero <em>¿Qué pasa cuando dejas de pulsar el botón? </em>Como el contacto está abierto no leemos tensión y por tanto suponemos que la lectura es 0V o tensión Low.</p>
+<p>Pero queridos amigos, este es uno de esos casos en los que suponer cosas puede marearte porque lo que leemos en el caso de pulsador abierto no tiene por qué ser 0. Es lo que en la jerga llamamos <strong>contacto flotante</strong> y su valor de lectura es imprevisible y poco más o menos aleatorio.</p>
+<p><em>¿Te resulta difícil de creer?</em> Claro, porque todos pensamos que la ausencia de tensión es 0, pero no. Esto es rotundamente falso. Lo cierto es que ese hilo RPI, al no estar conectado al GND del circuito del botón, está flotando, es decir baila alegremente de tensión provocado por influencias externas como emisiones de radio o simple electrostática, y las lecturas que hagas tienen más que ver con el azar que con un valor real.</p>
+<p>Recuerda que necesitamos asegurar que el GND de todos los componentes es el mismo, so pena de quemar algo. Y esto nos lleva a la vieja cuestión de las medidas de tensión son como las medidas de altura del agua, que dependen de donde lo midas, porque necesitas una referencia de base <em>(¿Qué altura tiene el agua en una bañera de un 5º piso?</em>)</p>
+<p>Todo este rollo viene a que si queremos tener una medida clara leyendo un pulsador, necesitamos asegurar que no hay un contacto flotante y para eso se suele usar un circuito más o menos así:</p>
+<img loading="lazy" class="aligncenter size-full wp-image-17017" src="https://www.prometec.net/wp-content/uploads/2016/12/Pull-up.jpg" alt="Leyendo un boton" width="350" height="240" srcset="https://www.prometec.net/wp-content/uploads/2016/12/Pull-up.jpg 350w, https://www.prometec.net/wp-content/uploads/2016/12/Pull-up-300x206.jpg 300w" sizes="(max-width: 350px) 100vw, 350px" />
+<p>Fíjate que si el pulsador está abierto, el input será HIGH o 5V porque forzamos la lectura de la tensión a través de R1 y R2. Pero si pulsas el contacto, la entrada leerá 0V o LOW, porque la tensión se desviará a GND impidiendo que la tensión suba en R2 (<em>Por eso hemos puesto R1, para evitar un corto</em>)</p>
+<p>En la jerga, cuando conectamos R1 a Vcc, decimos que es un circuito con resistencia <strong>Pull Up</strong>, porque cuando está abierto leemos valor alto (<em>De ahí lo de Up</em>).Pero también podemos invertir los 5V y GND, con lo cual crearíamos un circuito de <strong>Pull Down</strong>, ya que leeríamos GND o 0 al estar abierto y HIGH al pulsar.</p>
+<p>Aunque te pueda parecer un poco raro ahora, dale una pensada y verás como lo ves claro enseguida, es más, si te resulta extraño, prueba a montar esos circuitos y lo compruebas.</p>
+<p>Para leer un pulsador siempre necesitamos un circuito de <strong>Pull Up</strong> o <strong>Pull Down</strong>, lo que resulta bastante engorroso y más aún, las resistencias adicionales cuestan pasta, por lo que si a ti te molesta, no te digo a los que fabrican electrónica a gran escala.</p>
+<p>Por eso casi todos los controladores modernos como <strong>Arduino</strong> o<strong> Raspberry Pi </strong>incluyen un truco para evitar ese engorro y pueden activar ellos mismos resistencias internas de Pull up que te evitan incluirlas en tu circuito.</p>
+<p><em>¿Y porque no hemos empezado por ahí, en lugar de contarme toda esa historia de miedo? </em>Pues básicamente porque si no entiendes la necesidad de los <strong>Pull Up</strong>, no entenderás cuando debes usarlos y te vas a llevar más de un chasco con los botones <em>(Y otras cosas)</em>.</p>
+<p>Pero no te creas que los problemas de los pulsadores se acaban ahí, ¡Para nada! Otra de las malas costumbres de los pulsadores, es que el contacto no se cierra sin más cuando pulsas, No señor.</p>
+<p>Más bien rebotan varias veces, haciendo positivos y negativos repetidos hasta que se estabilizan y ya marcan un valor estable. Si esto te suena raro, es porque nosotros somos demasiado lentos para apreciarlo, pero tu Arduino o <strong>Raspberry</strong> pueden detectarlos porque son varios miles de veces más rápidos que tú y yo, y pueden contar esos rebotes y si lo haces te llevaras una sorpresa.</p>
+<p>Por eso hay que limpiar un poco el rebote (<em>Bouncing en inglés</em>) y a la técnica para limpiarlo se llama <strong>debouncing</strong> en la jerga habitual del gremio.</p>
+<p>En esta sesión vamos a ver como leer correctamente un pulsador con su <strong>Pull Up</strong> y como hacer el debouncing del mismo. Pero no te asustes que usaremos las resistencias internas de la <strong>Raspberry</strong> para ello en lugar de usar resistencias externas.</p>
+<p>&nbsp;</p>
+<div class='intro-text type3 '><h4>Leyendo un pulsador</h4></div>
+<p>&nbsp;</p>
+<p>Vamos a empezar por proponeros un pequeño circuito con un pulsador y un Led. La idea es poder ver como el Led se ilumina cuando pulsamos el botón o al revés. Y para ello podemos montar algo como esto:</p>
+<img loading="lazy" class="aligncenter wp-image-17018" src="https://www.prometec.net/wp-content/uploads/2016/12/esquema-1.jpg" alt="Raspberry y pulsador" width="852" height="611" srcset="https://www.prometec.net/wp-content/uploads/2016/12/esquema-1.jpg 905w, https://www.prometec.net/wp-content/uploads/2016/12/esquema-1-300x215.jpg 300w, https://www.prometec.net/wp-content/uploads/2016/12/esquema-1-768x552.jpg 768w" sizes="(max-width: 852px) 100vw, 852px" />
+<p>He usado la nomenclatura BCM para los pines y ahora ya podemos pasar a ver el programa, pero antes conviene que hablemos de lo que son los <strong>Cobbler</strong>, para evitar que nuestra Raspberry pase a mejor vida.</p>
+<p>&nbsp;</p>
+<div class='intro-text type3 '><h4>El Cobbler</h4></div>
+<p><strong> </strong></p>
+<p>En el último ejemplo hemos sacado 3 cablecitos de nuestra <strong>Raspberry</strong>, pero a medida que vuestros montajes se vayan complicando la cosa va a empeorar y complicarse más. Hemos ido conectando los diferentes pines a las conexiones que nos interesaban, pero naturalmente hay un problema que consiste en que la <strong>Raspberry</strong> no rotula el nombre de los pines en la placa, lo que nos obliga a contar los <strong>GPIO</strong> donde conectamos.</p>
+<p>Esto es algo que en el futuro procuraremos evitar, porque ciertos errores a la hora de contar pines pueden llevarnos a un pequeño chispazo y un entierro lamentable de nuestra buena  amiga la Raspi y al precio que van, conviene reducir las defunciones al mínimo.</p>
+<p>El caso es que yo tengo aprecio a mi Raspberry, porque lleva conmigo muchas batallas y por eso cuando vayamos a conectar más allá de 3 o 4 GPIO a nuestro proyecto, voy a usar a partir de ahora un <strong>Cobbler</strong> como este:</p>
+<img loading="lazy" class="aligncenter size-full wp-image-12322" src="https://www.prometec.net/wp-content/uploads/2016/05/Cobbler-1.jpg" alt="Detalle de conexiones" width="432" height="527" srcset="https://www.prometec.net/wp-content/uploads/2016/05/Cobbler-1.jpg 432w, https://www.prometec.net/wp-content/uploads/2016/05/Cobbler-1-246x300.jpg 246w" sizes="(max-width: 432px) 100vw, 432px" />
+<p>Su uso no es imprescindible, claro está, pero tiene la ventaja de que podemos sacar un conector plano de nuestra <strong>Raspberry</strong> y pasarlo al <strong>Cobbler</strong> que lo insertamos en la protoboard y desde ahí sacar los cables a nuestros circuitos.</p>
+<p>No es a prueba de errores, pero normalmente los <strong>Cobbler</strong> llevan rotulados los nombres de los pines a usar lo que ayuda a no equivocarse, por lo que es un aditamento que os recomiendo sin reservas porque seguramente os ahorrara cambiar de Raspberry cada tanto tiempo.</p>
+<p>Nosotros podemos publicar los circuitos que vayamos probando sin dibujar directamente el <strong>Cobbler</strong>, pero creedme, yo siempre lo uso en medio para evitar desgracias.</p>
+<p>En mi caso el circuito ya montado con todo, Led y pulsador queda más o menos así:</p>
+<img loading="lazy" class="aligncenter wp-image-17019" src="https://www.prometec.net/wp-content/uploads/2016/12/raspberry-cobbler-y-protoboard.jpg" alt="diagrama de conexion" width="767" height="412" srcset="https://www.prometec.net/wp-content/uploads/2016/12/raspberry-cobbler-y-protoboard.jpg 796w, https://www.prometec.net/wp-content/uploads/2016/12/raspberry-cobbler-y-protoboard-300x161.jpg 300w, https://www.prometec.net/wp-content/uploads/2016/12/raspberry-cobbler-y-protoboard-768x413.jpg 768w" sizes="(max-width: 767px) 100vw, 767px" />
+<p>Bueno pues una vez dicho esto y evitado en la medida de lo posible un inútil derramamiento de <strong>Raspis</strong>, podemos seguir con los programas para leer el pulsador</p>
+<p>&nbsp;</p>
+<div class='intro-text type3 '><h4>Programas para leer el pulsador</h4></div>
+<p>&nbsp;</p>
+<p>Para poner en marcha el programa vamos a presentar una nueva instrucción de <strong>Python 3 llamada</strong> if. Si estáis habituados a cualquier otro lenguaje, los condicionales con if son similares en <strong>Python</strong> (<em>Aunque también tiene sus ventajillas, como no</em>)</p>
+<p>Para quienes os acerquéis por primera vez a la programación, vale la pena comentar que en muchas ocasiones en tus programas necesitas comprobar si una condición dada se cumple o no. Y en función de ello tomar un curso de acción u otro. Y ese es el caso para saber si un botón ha sido pulsado.</p>
+<p>La instrucción if tiene en su forma más básica algo parecido a esto:</p>
+<pre style="padding-left: 60px;">If condición:
+   Instrucción 1
+   Instrucción 2
+   ....</pre>
+<p>Si la condición se cumple (<em>Es evaluable a True</em>) se ejecutan las instrucciones que vienen en el bloque a continuación (<em>Fíjate que acaba en : como siempre que puede ir un bloque de instrucciones)</em> y en caso contrario ignora el bloque y continua la ejecución a partir de este.</p>
+<p>Como es nuestro primer uso no voy a complicar más el tema por ahora, pero en otro momento veremos que tiene más opciones disponibles.</p>
+<p>Empezamos el programa con los import precisos que ya conocemos de sesiones previas:</p>
+<pre style="padding-left: 60px;"><span style="color: #ff9900;">import </span>RPi.GPIO <span style="color: #ff9900;">as</span> GPIO
+<span style="color: #ff9900;">import</span> time
+GPIO.setmode(GPIO.BCM)</pre>
+<p>Ahora tenemos que informar a nuestra <strong>Raspberry</strong> que vamos a usar nuestro pin 24 como entrada:</p>
+<pre style="padding-left: 60px;">GPIO.setup(24, GPIO.IN)</pre>
+<p>Esta es la forma más habitual de definir un pin de la <strong>Raspberry</strong> como de entrada, pero tiene el molesto inconveniente de necesitar usar una resistencia de Pull up o pull down para operar correctamente, como ya comentábamos arriba.</p>
+<p>Afortunadamente, nuestra <strong>Raspberry</strong> incluye una orden para activar estas resistencias de Pull up internamente y olvidarnos de hardware adicional, haciendo la definición del pin de marras de esta manera</p>
+<pre style="padding-left: 60px;">GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)</pre>
+<p>Que puedes leer como: Define el pin 24 como de entrada y para leerlo activa una resistencia interna de pull up. En Raspberry, a diferencia de Arduino, que solo permitía activar resistencias internas de pull up, también podemos activarlas de pull down usando el asombroso comando:</p>
+<pre style="padding-left: 60px;">GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)</pre>
+<p>Y ahora para leer nuestro botón, basta con leer el GPIO 24 y asignarlo a una variable como Status con la instrucción:</p>
+<pre style="padding-left: 60px;">Status = GPIO.input(24)</pre>
+<p>El programa completo puede quedar algo parecido a esto:</p>
+<pre style="padding-left: 60px;"><span style="color: #ff9900;">import</span> RPi.GPIO <span style="color: #ff9900;">as</span> GPIO
+<span style="color: #ff9900;">import</span> time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+<span style="color: #ff9900;">while True</span>:
+    Status  = GPIO.input(24)
+    <span style="color: #ff9900;">if</span> Status  == <span style="color: #ff9900;">False</span>:    
+        <span style="color: #ff00ff;">print</span>(”Botón pulsado.”)
+        time.sleep(0.2)</pre>
+<p>Después de las definiciones, usamos un bucle while para que lea de forma continua el valor del GPIO y se asigna a la variable Status.</p>
+<p>Como hemos activado una resistencia de <strong>pull up</strong> para leer el botón, devolverá un valor HIGH cuando este sin pulsar y False cuando se pulse. Por eso lo que hacemos con el if es comprobar si el status es False, y en caso afirmativo sacamos un mensajito diciendo que hemos pulsado sin más.</p>
+<p>Para los que vienen de C++ o Java, de nuevo fijaros que marcamos el bloque simplemente como un indentado después del símbolo : . Y al igual de en C++, para comprobar si Status es False la instrucción es:</p>
+<pre style="padding-left: 60px;">if Status  == False:</pre>
+<p>Y no esto otro:</p>
+<pre style="padding-left: 60px;">if Status  = False:</pre>
+<p>Algo que da a los novatos muchos dolores de cabeza al principio. La primera instrucción comprueba si Status es True o False, pero la segunda asigna el valor False a Status si o si, y una vez hecho decide si es verdadero o Falso el valor. Y como acabamos de hacer que Status es False la condición no se cumplirá nunca y nunca veréis escrito el resultado de que han pulsado el botón</p>
+<p>Dicho así parece un trabalenguas, por lo que os animo a que le dediquéis un momento a pensarlo y a ser posible que hagáis el programa con estas dos líneas para que veáis el resultado. Es más fácil de lo que parece.</p>
+<p>Por último, los lectores avispados, se habrán percatado de que hay una instrucción sospechosa al final del bloque:</p>
+<pre>        time.sleep(0.2)</pre>
+<p>La idea es que para evitar rebotes, dormimos a nuestra <strong>Raspberry</strong> durante 2 décimas de segundo para impedir que pueda leer repetidamente la entrada GPIO y detectando los correspondientes rebotes.</p>
+<p>Al dormir un poco la lectura le impedimos que le dé tiempo a ver los rebotes que suelen tardar menos de esos 0,2 segundos que le dormimos.</p>
+<p>Cuando probéis el circuito, veréis que cunado pulsas el botón te saca un simple mensaje de se ha pulsado el botón y poco más.</p>
+<p><em>¿Cómo hacemos para que además el LED indique el estado del contacto?</em> Esto ya deberías saber hacerlo tomando instrucciones de las últimas sesiones y te recomiendo que intentes hacerlo por ti mismo, pero por si acaso aquí está una solución:</p>
+<pre style="padding-left: 90px;"><span style="color: #ff9900;">import</span> RPi.GPIO <span style="color: #ff9900;">as</span> GPIO
+<span style="color: #ff9900;">import</span> time    
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(24, <a href="http://gpio.in/">GPIO.IN</a>, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(23, GPIO.OUT )
+
+<span style="color: #ff9900;">while True</span>:
+    input_state = GPIO.input(24)
+    if input_state == <span style="color: #ff9900;">False</span>:
+        GPIO.output(23, True)      <span style="color: #ff0000;"># Enciende el LED</span>
+        <span style="color: #ff00ff;">print</span>('Botón pulsado')
+        time.sleep(0.3)
+        GPIO.output(23, <span style="color: #ff9900;">False</span>)     <span style="color: #ff0000;"># Apaga el LED</span></pre>
+<p>Aquí os dejo un pequeño vídeo con el resultado.</p>
+<p><iframe loading="lazy" width="619" height="348" src="https://www.youtube.com/embed/cTQBkdSRiUk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<div class="margin clear-20"></div><div class='intro-text type3 '><h4>Resumen de la sesión</h4></div>
+<div  class='column one-fourth  '> </div><div  class='column three-fourth  last'><div class="margin clear-5"></div>
+<p>&nbsp;</p>
+<ul class="fancy-list star">
+<li style="list-style-type: none;">
+<ul class="fancy-list star">
+<li>Presentamos los pulsadores.</li>
+<li>Vimos porque necesitamos usar circuitos de pull up o pull down.</li>
+<li>Vimos los problemas basicos que presenta leer un pulsador.</li>
+<li>Aprovechamos para introducir el Cobbler.</li>
+<li>Escribimos un programa sencillo que lee el estado de un boton.</div><div class="margin clear-5"></div></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p style="text-align: left;"><div  class='column one-third  '><a href='https://www.prometec.net/for-y-python-3/'  class='button  medium   orange' >Anterior</a></div>
+<p style="text-align: left;"><div  class='column one-third  '><a href="https://www.facebook.com/prometecnet-1541207239447373/timeline/"><img loading="lazy" class="aligncenter wp-image-12939" src="https://www.prometec.net/wp-content/uploads/2016/06/LikeUsOnFacebook_Icon.jpg" alt="LikeUsOnFacebook_Icon" width="141" height="51" /></a> </div>
+<div  class='column one-third  last'></div>
+<div align="right">
+<div align="right"><a href='https://www.prometec.net/python-y-tipo-bool/'  class='button  medium   orange' >Siguiente</a></div>
+</div>
+<div align="right"></div>
+<div class="social-bookmark"></div>
+
+<!-- START EDITING HERE. -->
+	
+	        
+    <div class="info-box">Para porder realizar consultas a nuestros expertos, tienes que ser suscriptor. Suscribiendote nos ayudas a mantener este proyecto en marcha.</br></br><center><span style="color: #cc99ff;">
+<a href="https://www.prometec.net/cuenta-de-membresia/tipos-de-suscripcion/" target="_blank" class="button  medium  aligncenter  coral">
+¡ Quiero Suscribirme !</a></span></center>
+</br>Si ya eres premium y no puedes comentar haz login. <a href="https://www.prometec.net/wp-login.php/" target="_blank">Hacer login</a>
+</div>
+
+
+
+
+
+	
+    <section class="commententries">
+	    <h2 class="bg-title">(4) Comments</h2>
+        <ul class="commentlist">
+            <li  id="li-comment-32123" class="comment"><div id='comment-32123' class='comment-container'><div class="comment-author"><img alt='Avatar for Charly' title='Gravatar for Charly' src='https://secure.gravatar.com/avatar/b0a93a5ea63d733e0b851d6431196b64?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b0a93a5ea63d733e0b851d6431196b64?s=120&#038;d=mm&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></div><div class="comment-details"><ul class="comment-meta"><li class="author-name">Ivan Uriarte</li><li class="commentmetadata">30 Abr 2019</li></ul><p>Gracias Manuel. La verdad es que nosotros estamos encantados con Python&#8230;</p>
+</div></div></li><!-- #comment-## -->
+<li  id="li-comment-32016" class="comment"><div id='comment-32016' class='comment-container'><div class="comment-author"><img alt='Avatar for Charly' title='Gravatar for Charly' src='https://secure.gravatar.com/avatar/21e86da9fd9d9cf9dda4f3e3dec758c4?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/21e86da9fd9d9cf9dda4f3e3dec758c4?s=120&#038;d=mm&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></div><div class="comment-details"><ul class="comment-meta"><li class="author-name">Manuel Montoya Ramos</li><li class="commentmetadata">20 Abr 2019</li></ul><p>Hola a todos,<br />
+Excelente página web Charly, y enhorabuena por que el resultado del trabajo que estáis echando es muy bueno.<br />
+Yo también creo que los pines están cambiados, pero no tiene importancia.<br />
+Por cierto, desde que he empezado con Raspberry todo ha ido mejor que con la parte de comunicaciones de Arduino, que para mi ha sido y está siendo un dolor de muelas.<br />
+Además Python abre caminos a otras cosas de tecnología, que están llegando.<br />
+Muy interesante esta parte de Raspberry y Python y apenas hay comentarios, comparado con la parte de Arduino.<br />
+Muchas gracias,<br />
+Manuel</p>
+</div></div></li><!-- #comment-## -->
+<li  id="li-comment-24860" class="comment"><div id='comment-24860' class='comment-container'><div class="comment-author"><img alt='Avatar for Charly' title='Gravatar for Charly' src='https://secure.gravatar.com/avatar/ddace59512efa16e616acf3e8c4ddd9a?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ddace59512efa16e616acf3e8c4ddd9a?s=120&#038;d=mm&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></div><div class="comment-details"><ul class="comment-meta"><li class="author-name">Juan carlos macho mangas</li><li class="commentmetadata">13 Nov 2017</li></ul><p>Muchas gracias Ramon, le echare una ejeada en cuanto saque un rato</p>
+</div></div></li><!-- #comment-## -->
+<li  id="li-comment-24827" class="comment"><div id='comment-24827' class='comment-container'><div class="comment-author"><img alt='Avatar for Charly' title='Gravatar for Charly' src='https://secure.gravatar.com/avatar/b8aa0ec905b0d10ec05d74839b66c58c?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b8aa0ec905b0d10ec05d74839b66c58c?s=120&#038;d=mm&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' loading='lazy'/></div><div class="comment-details"><ul class="comment-meta"><li class="author-name">Ramon Piero</li><li class="commentmetadata">10 Nov 2017</li></ul><p>A</p>
+<p>Me parece que los pines 23 y 24 estan cambiados, no? el 23 de entrada y 24 de salida debiera de ser segun el primer grafico de Fritzing. Aprovecho para darte la enhorabuena por tus manuales. Magistrales!!!<br />
+Gracias</p>
+</div></div></li><!-- #comment-## -->
+        </ul>
+	</section>
+	<div class="margin clear-25"></div><div class="info-box">Para porder realizar consultas a nuestros expertos, tienes que ser suscriptor. Suscribiendote nos ayudas a mantener este proyecto en marcha.</br></br><center><span style="color: #cc99ff;">
+<a href="https://www.prometec.net/cuenta-de-membresia/tipos-de-suscripcion/" target="_blank" class="button  medium  aligncenter  coral">
+¡ Quiero Suscribirme !</a></span></center>
+</br>Si ya eres premium y no puedes comentar haz login. <a href="https://www.prometec.net/wp-login.php/" target="_blank">Hacer login</a>
+</div>
+                </article>
+			  </div>
+			  <!-- SIDEBAR SECTION STARTS -->
+			  			  <!-- SIDEBAR SECTION ENDS -->			  
+		  </div>
+		  		  
+          		  
+		  <div class="margin clear-80"></div>
+		         
+	  </div>
+        
+		<footer>
+			    			<div class="container"><div class='column one-fourth '></div><div class='column one-fourth '></div><div class='column one-fourth '></div><div class='column one-fourth last'></div></div>
+		    			<div class="footer-info">
+				<div class="container">
+	                <div class="copyright">Copyright <a href="https://www.prometec.net" title="Prometec">Prometec </a></div><ul class='social-icons'><li>	<a href='https://www.facebook.com/pages/prometecnet/1541207239447373'><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/hover/facebook.png' alt='facebook.png' /><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/facebook.png' alt='facebook.png' />	</a></li><li>	<a href='#'><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/hover/twitter.png' alt='twitter.png' /><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/twitter.png' alt='twitter.png' />	</a></li><li>	<a href='https://plus.google.com/102599837500325608697'><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/hover/google.png' alt='google.png' /><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/google.png' alt='google.png' />	</a></li><li>	<a href='https://www.youtube.com/channel/UC51LheGI2gCZbc2Ocrry49g'><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/hover/youtube.png' alt='youtube.png' /><img src='https://www.prometec.net/wp-content/themes/myempire//images/sociable/youtube.png' alt='youtube.png' />	</a></li></ul>				</div>
+			</div>
+		</footer>
+	</div>
+</div>
+
+ <script type='text/javascript'>
+	var mytheme_urls = {
+		 theme_base_url:'https://www.prometec.net/wp-content/themes/myempire/'
+ 		,framework_base_url:'https://www.prometec.net/wp-content/themes/myempire/framework/'
+ 		,ajaxurl:'https://www.prometec.net/wp-admin/admin-ajax.php'
+ 		,url:'https://www.prometec.net'
+ 		,stickynav:'enable'
+	};
+ </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56263121-1', 'auto');
+  ga('send', 'pageview');
+
+</script>		<!-- Memberships powered by Paid Memberships Pro v2.7.5.
+ -->
+	
+<script type='text/javascript'>
+/* <![CDATA[ */
+r3f5x9JS=escape(document['referrer']);
+hf4N='1b8bfb988ba9287f97ff1f7cff5d2c2a';
+hf4V='57741e29698c493ada41d68c60a88fcb';
+cm4S="form[action='https://www.prometec.net/wp-comments-post.php']";
+jQuery(document).ready(function($){var e="#commentform, .comment-respond form, .comment-form, "+cm4S+", #lostpasswordform, #registerform, #loginform, #login_form, #wpss_contact_form, .wpcf7-form";$(e).submit(function(){$("<input>").attr("type","hidden").attr("name","r3f5x9JS").attr("value",r3f5x9JS).appendTo(e);$("<input>").attr("type","hidden").attr("name",hf4N).attr("value",hf4V).appendTo(e);return true;});$("#comment").attr({minlength:"15",maxlength:"15360"})});
+/* ]]> */
+</script> 
+<script type='text/javascript' src='https://www.prometec.net/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.prometec.net\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.6' id='contact-form-7-js'></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.prometec.net","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/plugins/wp-spamshield/js/jscripts-ftr-min.js' id='wpss-jscripts-ftr-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-includes/js/comment-reply.min.js?ver=5.9.3' id='comment-reply-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.sticky.js?ver=5.9.3' id='script.stickynav-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.validate.min.js?ver=5.9.3' id='script.validate-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.bxslider.min.js?ver=5.9.3' id='script.bxslider-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.carouFredSel-6.2.0-packed.js?ver=5.9.3' id='script.caroufred-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.tipTip.minified.js?ver=5.9.3' id='script.tipTip-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.viewport.js?ver=5.9.3' id='script.viewport-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery-easing-1.3.js?ver=5.9.3' id='script.easing-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.tabs.min.js?ver=5.9.3' id='script.tabs-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/shortcodes.js?ver=5.9.3' id='script.shortcodes-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.mobilemenu.js?ver=5.9.3' id='script.mobilemenu-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.prettyPhoto.js?ver=5.9.3' id='script.prettyphoto-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/jquery.isotope.min.js?ver=5.9.3' id='script.isotope-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/contact.js?ver=5.9.3' id='script.contact-js'></script>
+<script type='text/javascript' src='https://www.prometec.net/wp-content/themes/myempire/framework/js/public/custom.js?ver=5.9.3' id='script.custom-js'></script>
+<script type="text/javascript">
+    window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},s=d.getElementsByTagName('script')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='//rec.getsmartlook.com/bundle.js';s.parentNode.insertBefore(c,s);
+    })(document);
+    smartlook('init', 'db65d156d7b8674084beca1177495f8f26ca1bbb');
+</script>
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1651571633 -->

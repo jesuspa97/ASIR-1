@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reloj</title>  
+    <script>
+      /*var html = document.getElementById("tiempo").value;
+        setInterval(function reloj(){
+            tiempo = new Date();
+            horas = tiempo.getHours();
+            minutos = tiempo.getMinutes();
+            segundos = tiempo.getSecons();
+
+            html.innerHTML = horas + " : " + minutos + " : " + segundos + " : ";
+
+        },1000);*/
+
+     
+       /* function tiempo() {
+        let timeNow = new Date();
+        hours = timeNow.getHours();
+        minutes = timeNow.getgetMinutes();
+        seconds = timeNow.getSeconds();
+        horaImprimir =  horas + " : " + minutos + " : " + segundos + " : "
+            document.getElementById("time").innerHTML = horaImprimir;
+        }
+        setTimeout(reloj(),1000)*/
+
+
+    function mueveReloj(){
+        momentoActual = new Date();
+        hora = momentoActual.getHours();
+        minuto = momentoActual.getMinutes();
+        segundo = momentoActual.getSeconds();
+
+        horaImprimible = hora + " : " + minuto + " : " + segundo
+
+        document.getElementById("time").innerHTML = horaImprimible
+
+        setTimeout("mueveReloj()",1000)
+    }
+
+
+    </script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #d2d9e4;
+        font-family: sans-serif;
+    }
+    section {
+        display: inline-block;
+        position: fixed;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        justify-content: center;
+        align-items: center;
+        /*border: #71767f 2px dotted;*/
+    }
+    .reloj{
+        display: inline-block;
+        background-color: #d1dae3;
+        color: #71767f;
+        padding: 30px;
+        font-weight: bold;
+        font-size:70px;
+        border-radius: 4px;
+        border: 4px solid #cad3dc;
+        box-shadow: -8px -8px 15px rgba(255,255,255,0.5),
+                    10px 10px 10px rgba(0,0,0,0.1),
+                    inset -8px -8px 15px rgba(255,255,255,0.5),
+                    inset 10px 10px 10px rgba(0,0,0,0.1);
+        
+        
+    }
+</style>
+<body onload="mueveReloj()">
+  
+    <section>
+        <div class="reloj">
+            <span id="time">00 : 00 : 00</span>
+        </div>
+    </section>
+</body>
+</html>

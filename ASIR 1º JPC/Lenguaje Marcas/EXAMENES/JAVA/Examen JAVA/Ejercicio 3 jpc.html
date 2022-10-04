@@ -1,0 +1,52 @@
+<!-- Realizar una función que reciba 2 números en la llamada y sea capaz de calcular cuántos múltiplos de 5 hay entre esos 2 números.Y lo debvuelva al programa principal.
+el programa principal debe mostrar el resultado Ejemplo LLmada:Calculo(6,33)-----
+La cantidad de múltiplos de 5 es: 5.
+Explicación (de 6 pasamos al 10 que sería el primer múltiplo, despues 15,20,25,30) así obtenemos 5
+-->
+<!Doctype html>
+<html>
+<head>
+
+	<title></title>
+	
+		
+</head>
+
+<body>
+	<script>
+
+        function multiplo(num1,num2) 
+        {
+            if (num1>num2)
+            {
+                mayor=parseInt(num1);
+                menor=parseInt(num2);
+            }
+            else 
+            {
+                mayor=parseInt(num2);
+                menor=parseInt(num1);
+            }
+            for (i=menor;i<=mayor;i++) 
+            {
+                if (i%5==0) 
+                {
+                    cont++
+                }
+                
+            }
+            return cont
+        }
+    
+        var num1=parseInt(prompt("Indícame el primer número : "));
+        var num2=parseInt(prompt("Indícame el segundo número : "));
+        var cont=parseInt(0);
+        document.write("La cantidad de múltiplos de 5 es: " + multiplo(num1,num2));
+    
+    </script>
+
+	
+</body>
+
+</html>
+

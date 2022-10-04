@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+</head>
+<body>
+<script>
+    function cambio_Euro(){
+        var tengopesetas= document.getElementById("pesetas").value;
+        /*var tengoeuros= document.form.euros.value;*/
+        /*alert(tengopesetas)*/
+        if(tengopesetas>0){
+            var tengoeuros=(tengopesetas/166.386)
+            document.getElementById("euros").value=tengoeuros;
+        }
+    }
+    function cambio_Peseta(){
+        var tengoeuros= document.getElementById("euros2").value;
+        /*alert(tengoeuros)*/
+        if(tengoeuros>0){
+            var tengopesetas=(tengoeuros*166.386)
+            document.getElementById("pesetas2").value=tengopesetas;
+        }
+    }
+</script>
+
+    <h2>Conversión de pesetas y euros</h2>
+	<form id="form" name="form">
+		<label name="labelpeseta" id="labelpeseta">Pesetas: </label> 
+        <input type="number" name="pesetas" id="pesetas"/>
+        <input type="button" value="Cambio a euros" onClick=cambio_Euro()>
+        <label name="labelEuro" id="labelEuro">Euros: </label>
+        <input type="number" name="euros" id="euros"><br>
+		<hr></hr>
+		<label name="labelEuro2" id="labelEuro2">Euros: </label>
+        <input type="number" id="euros2"/>
+        <input type="button" value="Cambio a pesetas" onClick="cambio_Peseta()">
+        <label name="labelpeseta2" id="labelpeseta2">Pesetas: </label>
+        <input type="number" id="pesetas2"><br>
+	</form>    
+</body>
+</html>

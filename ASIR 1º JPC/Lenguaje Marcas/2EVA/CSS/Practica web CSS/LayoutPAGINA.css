@@ -1,0 +1,85 @@
+body{padding: 0px;
+    margin: 0px;
+    overflow: clip;}
+/*--------------------------------------------------------------------------------------------------*/
+div.arriba{
+    background: url(https://img.freepik.com/vector-gratis/fondo-realista-negro-formas-geometricas-plateadas_1017-30668.jpg?size=626&ext=jpg);
+    width: 100%;
+    height: 6vw; /*alto no acepta porcentaje*/
+    display: block; 
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;}
+      li{  display:block; width: 10%;float: left;margin-left: 5%;margin-right: 5%; }
+      li.iuno{color: white;border-bottom:white 2px solid;}
+      li.idos{color: red;border-bottom:red 2px solid;}
+      li.itres{color: yellow;border-bottom:yellow 2px solid;}
+      li.icuatro{color: blue;border-bottom:blue 2px solid;}
+      li.icinco{color: green;border-bottom:green 2px solid;}
+
+      li.iuno:hover {color: black;background-color: azure; box-shadow: 5px 5px 5px;} /*ancho,alto,difuminado y color*/
+      li.idos:hover{color: black;background-color:red;box-shadow: 5px 5px 5px;}
+      li.itres:hover{color: yellow;border-bottom:yellow 2px solid;box-shadow: 5px 5px 5px;}/*ancho,alto,difuminado y color OTRO TIPO DE HOVER vers*/
+      li.icuatro{color: blue;border-bottom:blue 2px solid;}
+      li.icinco{color: green;border-bottom:green 2px solid;}
+      ul.listamenu{width: 100%; text-align: center;}
+/*--------------------------------------------------------------------------------------------------*/
+div.izq{
+   background: url(./IMAGENEScss/marmol.jpg);
+   width: 10%;
+   height: 42.8vw;
+   float: left;
+   overflow: hidden;
+   border-right: 1px black solid;
+}
+/*--------------------------------------------------------------------------------------------------*/
+div.contenido{
+   background: url(./IMAGENEScss/marmol.jpg);
+   width: 89.9%;
+   height: 42.8vw;
+   float: left;  
+   overflow-y: scroll;
+   }
+/*--------------------------------------------------------------------------------------------------*/
+div.abajo{
+   background-color: black;
+   width: 100%;
+   height: 3vw; /*alto no acepta porcentaje*/
+   padding: 0px;
+   float: left;}
+/*--------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
+/*APARTADOPRUEBAS*/
+div.lomas{
+   margin-top: 5%;
+   margin-bottom: 5%;
+   width: 95%;
+   padding: 2%;
+   float: left;
+   border: 2px black dotted;
+   display: block;}
+
+h1.lomas{
+   color: red; font-family: 'Courier New', Courier, monospace;
+   padding: 1%;
+   background-color: yellow;
+   text-align: center;
+   margin: 0%;}
+
+p.lomas{
+   color: blueviolet; float: left;
+   width: 63%;
+   padding-left: 2%;
+   border: 2px red dotted;
+   margin-top: 0%;}
+
+img.lomas{float: left; width: 30%;}
+/*--------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
+p.rest{color: blue;
+float: right;}
+img.rest{float: left; width: 45%;}
+
+

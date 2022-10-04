@@ -1,0 +1,11 @@
+ÍNDICE DE COMANDOS
+https://docs.python.org/es/3/py-modindex.html
+
+BIBLIOTECA ESTÁNDAR
+https://docs.python.org/es/3/library/index.html
+
+GUÍA DE DESARROLLADOR
+https://devguide.python.org/
+
+REFERENCIA DE LENGUAJE (SINTAXIS BASE)
+https://docs.python.org/es/3/reference/index.html

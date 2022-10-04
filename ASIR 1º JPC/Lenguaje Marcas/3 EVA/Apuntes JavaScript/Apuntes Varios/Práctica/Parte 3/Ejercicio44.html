@@ -1,0 +1,42 @@
+<!--En una empresa trabajan 5 empleados cuyos sueldos oscilan entre 100 y 500
+euros. Realizar un programa que lea los sueldos que cobra cada empleado e informe
+cuántos empleados cobran entre 100 y 300 euros y cuántos cobran más de 300.
+Además el programa deberá informar el importe que gasta la empresa en sueldos al
+personal. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+        var superior=parseInt(0);
+        var inferior=parseInt(0);
+        var salario=0;
+        var suma=0;
+        for(i=1;i<=5;i++)
+        {
+        salario=parseFloat(prompt("Dime uno de los salarios : "))
+        suma=suma+salario;
+        if (salario>=300)
+            {
+            superior=superior+1;
+                
+            }
+        else
+            {
+            inferior=inferior+1;
+                
+            }
+            
+        }          
+        document.write("Un total de " +superior+" empleados cobran un salario superior a 300€ <br>" )
+        document.write("Un total de " +inferior+" empleados cobran un salario inferior a 300€ <br>" )
+        document.write("La empresa tiene un coste total en salarios igual a "+suma+"€.")
+     </script>
+     
+ </body>
+ </html>

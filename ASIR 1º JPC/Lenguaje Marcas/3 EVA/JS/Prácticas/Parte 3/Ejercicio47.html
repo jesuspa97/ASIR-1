@@ -1,0 +1,34 @@
+<!--Desarrollar un programa que permita cargar 5 números enteros y luego nos
+informe cuántos valores fueron pares y cuántos impares.
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         var numero=0;
+         var par=0;
+         var impar=0;
+         for(i=1;i<=5;i++)
+         {
+             numero=parseInt(prompt("Indícame un número : "))
+             if((numero%2)==0)
+             {
+                 par=par+1;
+             }
+             else
+             {
+                 impar=impar +1;
+             }
+         }
+         document.write("Hay "+par+" números pares. <br>")
+         document.write("Hay "+impar+" números impares.")
+     </script>
+     
+ </body>
+ </html>

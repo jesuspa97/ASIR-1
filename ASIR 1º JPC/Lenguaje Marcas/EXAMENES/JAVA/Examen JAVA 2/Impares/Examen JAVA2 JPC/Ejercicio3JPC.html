@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3JPC</title>
+</head>
+<body>
+    <script>
+        function descuentoaleatorio(){ 
+        min=5
+        max=20
+        var descuentoaleatorio=Math.round(Math.random()*(max-min)+min);
+            /*alert(descuentoaleatorio)*/
+            document.getElementById("descuento").value=descuentoaleatorio;
+        }
+        function nuevoprecio(){
+        var cantidad = document.getElementById("cantidad").value;
+            /*alert(cantidad)*/
+        var descuento = document.getElementById("descuento").value;
+            /*alert(descuento)*/
+        var nuevoprecio=cantidad-((cantidad*descuento)/100);
+            alert(nuevoprecio)
+
+        document.getElementById("nuevoprecio").innerHTML=nuevoprecio;
+        }
+    </script>
+
+    Introduce cantidad : <input type="number" name="cantidad" id="cantidad" onblur="descuentoaleatorio()"> <br>
+    Introduce descuento : <input type="number" name="descuento" id="descuento"> <br>
+
+    TOTAL: <span id="nuevoprecio"></span><br> 
+
+    <button onclick="nuevoprecio()">Calcular</button>
+    <input type="reset" value="Borrar">
+
+</body>
+
+</body>
+</html>
+ 
+   

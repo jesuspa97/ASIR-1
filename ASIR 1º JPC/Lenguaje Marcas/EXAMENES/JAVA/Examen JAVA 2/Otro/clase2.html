@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej2JPC</title>
+</head>
+<body>
+    <script>
+        function calcularDC(){
+        var provincia= document.getElementById("provincia").value;
+        var numero= document.getElementById("numero").value;
+        var digito= document.getElementById("digito").value;
+        var datod=0;
+        var datoc=0;
+        if(provincia.length==2 && numero.length==8 && digito.length==2){
+            datod=((numero+provincia)*10000000);
+            /*alert(datod)*/
+            datoc=(datod%97);
+            /*alert(datoc)*/
+            if(datoc!=0 && datoc==digito){
+                alert("Los datos introducidos son correctos. Enviando información...")
+            }
+            if(datoc!=digito){
+                alert("Los datos introducidos NO son correctos.")
+                alert("El Digito Control correcto sería : "+datoc)
+            }
+
+        }
+
+            if(provincia.length==0){
+                alert("El campo PROVINCIA está vacío.Rellénelo")
+                document.getElementById("provincia").focus()
+            }
+            else if(provincia.length<2){
+                alert("El campo PROVINCIA está incompleto.Faltan dígitos")
+                document.getElementById("provincia").focus()
+            }
+            else if(provincia.length>2){
+                alert("La información es errónea.Sobran dígitos")
+                document.getElementById("provincia").focus()
+            }
+
+
+            if(numero.length==0){
+                alert("El campo NÚMERO está vacío.Rellénelo")
+                document.getElementById("numero").focus()
+            }
+            else if(numero.length<8){
+                alert("El campo NÚMERO está incompleto.Faltan dígitos")
+                document.getElementById("numero").focus()
+            }
+            else if(provincia.length>8){
+                alert("La información es errónea.Sobran dígitos")
+                document.getElementById("numero").focus()
+            }
+
+            if(digito.length==0){
+                alert("El campo DÍGITO CONTROL está vacío.Rellénelo")
+                document.getElementById("digito").focus()
+            }
+            else if(digito.length<2){
+                alert("El campo DÍGITO CONTROL está incompleto.Faltan dígitos")
+                document.getElementById("digito").focus()
+            }
+            else if(provincia.length>2){
+                alert("La información es errónea.Sobran dígitos")
+                document.getElementById("digito").focus()
+            }
+            
+        }
+    </script>
+    
+    <label name="prov" id="prov" value="">Provincia :</label>
+    <input type="number" name="provincia" id="provincia" value=""><br><br>
+    <label name="num" id="num" value="">Número :</label>
+    <input type="number" name="numero" id="numero" value=""><br><br>
+    <label name="dig" id="dig" value="">Dígito Control :</label>
+    <input type="number" name="digito" id="digito" value=""><br><br>
+    <button onclick="calcularDC()">Aceptar</button>
+</html>
+
+<!--aa= Provincia
+bbbbbbbb= Número
+cc= Dígito Control
+
+d=b+a*10000000
+c=d%97 (resto de división entera)-->

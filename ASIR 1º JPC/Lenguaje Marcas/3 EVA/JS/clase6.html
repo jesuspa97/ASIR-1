@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function descuentoaleatorio(){
+            max=20
+            min=5
+            var descuentoaleatorio=Math.round(Math.random()*(max-min)+min);
+            /*alert(descuentoaleatorio)*/
+            document.getElementById("descuento").value=descuentoaleatorio;
+        }
+
+        function nuevoprecio(){
+            var cantidad = document.getElementById("cantidad").value;
+            /*alert(cantidad)*/
+            var descuento = document.getElementById("descuento").value;
+           /*alert(descuento)*/
+           var nuevoprecio=cantidad-((cantidad*descuento)/100);
+           /*alert(nuevoprecio)*/
+           document.getElementById("nuevoprecio").innerHTML=nuevoprecio;
+        }
+    </script>
+
+    <label>Introduce cantidad : </label>
+    <input type="number" name="cantidad" id="cantidad" onblur="descuentoaleatorio()"><br><br>
+    <label>Introduce descuento : </label>
+    <input type="number" name="descuento" id="descuento"><br><br>
+    TOTAL: <span id="nuevoprecio"></span><br>
+    <button onclick="nuevoprecio()">Calcular</button>
+    <input type="reset" value="Borrar">
+
+</body>
+</html>

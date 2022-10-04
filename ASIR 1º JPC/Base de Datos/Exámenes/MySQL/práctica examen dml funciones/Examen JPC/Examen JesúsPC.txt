@@ -1,0 +1,75 @@
+1.Muestra los nombres y apellidos de los pacientes en minúsculas.
+select lower(nombre),lower(apellido1),lower(apellido2) from pacientes;
+
+2.Muestra el apellido2,un guión,apellido1,un espacio y después el nombre.
+select concat(apellido2,"-",apellido1," ",nombre) from pacientes;
+
+3.Muestra los 3 primeros caracteres del apellido1 de los pacientes cuyo nombre comiencen por la "A".
+select left(apellido1,3) from pacientes where nombre like"A%";
+
+4.Muestra los nombres de todos los pacientes,reemplazando "Pepe" por "Jose".
+select replace (nombre,"Pepe","Jose") from pacientes;
+
+5.Muestra al revés el apellido2 de los pacientes que tomemos en nuestra base de datos cuyo telefono comience por 666.
+select reverse (apellido2) from pacientes where telefono like "666%";
+probar con left
+
+6.Muestra el día de la semana de hoy,puede ser en inglés.
+select dayname(now());
+
+
+-------------------Practica12 EMP---------------------
+7.obtén el salario total(salario+comisiónión) de todos los empleados,usando correctamente los nulos.La suma no puede ser NULL.Usa la función correcta.
+select ifnull(sal+comm,sal) from emp;
+
+8.Halla el salario mínimo de cada (agrupado por) departamento.
+select min(sal) from emp group by deptno;
+
+9.Muestra el nombre de los empleados y la fecha de la tabla emp en formato:día mes año.
+select ename, date_format(hiredate, "%d-%m-%Y") from emp;
+
+10.Muestra el último empleado contratado por la empresa.
+select * from emp order by hiredate desc limit 1;
+select ename from emp where hiredate like (select max(hiredate) from emp);
+
+11.¿Cuántos empleados su comisión no es nula?
+select count(ename) from emp where comm>0;
+
+12.Halla la suma del salario de los empleados de que son del departamento 10.
+select sum(sal) from emp where deptno=10;
+
+
+
+Create database pacientes;
+
+use pacientes;
+CREATE TABLE pacientes (
+  id int(11) NOT NULL,
+  apellido1 varchar(100) NOT NULL,
+  apellido2 varchar(100) NOT NULL,
+  nombre varchar(100) NOT NULL,
+  telefono int(10) NOT NULL,
+  fecha_ingreso date DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+
+ 
+insert into pacientes values(1,'González','Sanz','Jorge',665482778,'2015-03-24');
+insert into pacientes values(2,'Jimenez','Castro','Natalia',633452005,'2010-10-15');
+insert into pacientes values(3,'López','Torres','Julian',655923636,'2019-12-03');
+insert into pacientes values(4,'Hoyos','Ramírez','Paula',688795328,'2013-09-29');
+insert into pacientes values(5,'Burgos','Sánchez','Ana',655986475,'2007-04-08');
+insert into pacientes values(6,'Atienza','Loeches','Pepe',915223785,'2017-07-24');
+insert into pacientes values(7,'Padilla','Crespo','Jesús',915226789,'2017-06-25');
+insert into pacientes values(8,'Picazo','Berenguer','Flaura',666226789,'2017-06-25');
+
+
+
+
+
+
+
+
+
+

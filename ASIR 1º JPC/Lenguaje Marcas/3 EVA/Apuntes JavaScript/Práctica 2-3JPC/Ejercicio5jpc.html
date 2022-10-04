@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <table name="menu" id="menu">
+        <tr>
+            <th colspan=5 name="titulo" id="titulo">Mi sitio web</th>
+        </tr>
+        <tr>
+            <td name="inicio" id="inicio">Inicio</td>
+            <td name="aficiones" id="aficiones">Mis aficiones</td>
+            <td name="amigos" id="amigos">Mis amigos</td>
+            <td name="fotos" id="fotos">Mis fotos</td>
+            <td name="contacto" id="contacto">Contacto</td>
+        </tr>
+    </table>
+    <form name="form" id="form">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label>DNI: </label>
+                        <input type="text" id="numeros" id="numeros" size="8"/>
+                        -
+                        <input type="text" name="letra" id="letra" size="1" /><br>
+                        <label name="labelnombre" id="labelnombre">Nombre: </label>
+                        <input type="text" name="nombre" id="nombre"/><br>
+                        <label name="labelapellidos" id="labelapellidos">Apellidos: </label>
+                        <input type="text" name="apellidos" id="apellidos"/><br>
+                        <label name="labelcorreo" id="labelcorreo">Correo-e: </label><input type="email" name="correo" id="correo"/><br>
+                    </td>
+                    <td>
+                        <label name="" id="">Sexo: </label><br>
+                        <input type="radio" name="sexo" id="sexo" value="Hombre"/>Hombre<br>
+                        <input type="radio" name="sexo" id="sexo" value="Mujer"/>Mujer<br>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Dirección</legend>
+            <label name="labelcalle" id="labelcalle">Calle/Avda.:</label>
+            <input type="text" name="calle" id="calle"/><br>
+            <label name="labelpoblacion" id="labelpoblacion">Población :</label>
+            <input type="text" name="poblacion" id="poblacion"/> 
+            <label name="labelprovincia" id="labelprovincia">Provincia :</label>
+            <select name="provincia" id="provincia">
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Práctica en grupo</legend>
+            <label name="labelarchivo" id="labelarchivo">Archivo :</label>
+            <input type="text">
+            <button name="browse" id="browse">Browse</button><br>
+            <input type="checkbox" name="archivoc" id="archivo" value="archivoc"/>
+            <label name="labelarchivoc" id="labelarchivoc">Archivo comprimido</label>
+            <input type="checkbox" name="archivoe" id="archivoe" value="archivoe"/> <label>Archivo encriptado</label><br>
+            <label name="labelarchivoe" id="labelarchivoe">Descripción de la práctica :</label><br>
+            <textarea cols=100 rows=5 id="descripcion" name="descripcion"></textarea><br>
+            <input type="button" onClick="return validar()" align="center" name="enviar" id="enviar" value="Enviar"/>
+        </fieldset>
+    </form>   
+</body>
+</html>

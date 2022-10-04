@@ -1,0 +1,32 @@
+<!-- Se ingresan tres valores por teclado, si todos son iguales se imprime la suma del
+primero con el segundo y a este resultado se lo multiplica por el tercero.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numuno=parseInt(prompt('Indícame el primer número : '));
+        var numdos=parseInt(prompt('Indícame el segundo número : '));
+        var numtres=parseInt(prompt('Indícame el tercer número : '));
+        var suma= numuno+numdos;
+        var multiplicacion=suma*numtres; 
+        if (numuno==numdos && numdos==numtres)
+        {
+            document.write("La suma de los dos primeros números es igual a " + suma +"<br>")
+            document.write("Y la el producto de la suma anterior multiplicada por " + numtres + " es igual a " + multiplicacion)
+        }
+        else
+        {
+            document.write("Los números no son iguales , no se calcularan nuevas variables.")
+        }
+    </script>
+    
+</body>
+</html>
+

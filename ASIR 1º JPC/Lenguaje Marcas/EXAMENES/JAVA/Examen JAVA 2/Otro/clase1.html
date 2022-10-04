@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej1JPC</title>
+</head>
+<body>
+<script>
+    function nuevosueldo(){
+        var sueldo= document.getElementById("sueldo").value;
+        /*alert(sueldo)*/
+        var antiguedad= document.getElementById("antiguedad").value;
+        /*alert(antiguedad)*/
+
+        if(sueldo<1000 && antiguedad>=10){
+            /*Aumento del 20%*/
+            sueldo=(sueldo*1.2)
+            alert("El nuevo salario sería : "+sueldo+" €")
+        }
+        else if(sueldo<1000 && antiguedad<10){
+            /*Aumento del 5%*/
+            sueldo=(sueldo*1.05)
+            alert("El nuevo salario sería : "+sueldo+" €")
+        }
+        else if(sueldo>=1000){
+            alert("Lo siento tu saldo no cambia : "+sueldo+" €")
+        }
+    }
+</script>
+
+    <label>Sueldo: </label>
+    <input type="number" name="sueldo" id="sueldo">
+    <label>Antigüedad :</label>
+    <input type="number" name="antiguedad" id="antiguedad">
+    <button onclick="nuevosueldo()">Calcular Nuevo Salario</button>
+   
+</body>
+</html>
